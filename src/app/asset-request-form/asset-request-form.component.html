@@ -1,17 +1,22 @@
 <div class="container">
     <h1>Asset Procurement Approval Form</h1>
     <hr>
-    <form>
+    <form #assetForm="ngForm" (ngSubmit)="submit(assetForm)" novalidate>
+        <!-- Approved Machine -->
+        <div class="form-group">
+            <label for="approvedMachine"><b>Approved Machine: </b></label>
+            <input type="text" id="approvedMachine" name="formInputField" class="form-control" [(ngModel)]="approvedMachine" required>
+        </div>
+        <pre></pre>
         <!-- Company Name and Location Information -->
         <div class="form-group">
             <label for="companyName"><b>Company Name: </b></label>
-            <input type="text" name="companyName" class="form-control">
+            <input type="text" id="companyName" name="formInputField" class="form-control" [(ngModel)]="companyName" required>
             <pre></pre>
             <label for="location"><b>Location: </b></label>
-            <input type="text" name="location" class="form-control">
-            <pre></pre>            
+            <input type="text" id="location" name="formInputField" class="form-control" [(ngModel)]="location" required>
             <label for="subLocation"><b>Sub Location: </b></label>
-            <input type="text" name="subLocation" class="form-control">
+            <input type="text" id="subLocation" name="formInputField" class="form-control" [(ngModel)]="subLocation" required>
         </div>
         <pre></pre>
         <!-- Owner Information -->
@@ -19,30 +24,30 @@
             <p><b>Asset Owner Information</b></p>
             <!-- First Name -->
             <label for="assetOwnerFirstName">First Name: </label>
-            <input type="text" name="assetOwnerFirstName" class="form-control">
+            <input type="text" id="assetOwnerFirstName" name="formInputField" class="form-control" [(ngModel)]="assetOwnerFirstName" required>
             <!-- Middle Name -->
             <label for="assetOwnerMiddleName">Middle Name: </label>
-            <input type="text" name="assetOwnerMiddleName" class="form-control">
+            <input type="text" id="assetOwnerMiddleName" name="formInputField" class="form-control" [(ngModel)]="assetOwnerMiddleName">
             <!-- Last Name-->
             <label for="assetOwnerLastName">Last Name: </label>
-            <input type="text" name="assetOwnerLastName" class="form-control"><br>
+            <input type="text" id="assetOwnerLastName" name="formInputField" class="form-control" [(ngModel)]="assetOwnerLastName" required>
             <pre></pre>
             <!-- Email -->
             <label for="assetOwnerEmail">Email: </label>
-            <input type="email" name="assetOwnerEmail">
+            <input type="email" id="assetOwnerEmail" name="formInputField" class="form-control" [(ngModel)]="assetOwnerEmail" required>
             <!-- EDP No. -->
             <label for="edpNumber">EDP No.: </label>
-            <input type="text" name="edpNumber">
+            <input type="text" id="edpNumber" name="formInputField" class="form-control" [(ngModel)]="edpNumber" required>
             <!-- Designation -->
             <label for="assetOwnerDesignation">Designation: </label>
-            <input type="text" name="assetOwnerDesignation"><br>
+            <input type="text" id="assetOwnerDesignation" name="formInputField" class="form-control" [(ngModel)]="assetOwnerDesignation" required>
             <pre></pre>
             <!-- Cost Center -->
             <label for="costCenter">Cost Center: </label>
-            <input type="text" name="costCenter">
+            <input type="text" id="costCenter" name="formInputField" class="form-control" [(ngModel)]="costCenter" required>
             <!-- Department -->
             <label for="department">Department: </label>
-            <input type="text" name="department">
+            <input type="text" id="department" name="formInputField" class="form-control" [(ngModel)]="department" required>
         </div>
         <pre></pre>
         <!-- Delivery Address -->
@@ -50,24 +55,24 @@
             <div><b>Address</b></div>
             <!-- Company/Organization Name -->
             <label for="organizationName">Company/Organization Name: </label>
-            <input type="text" name="organizationName" class="form-control">
+            <input type="text" id="organizationName" name="formInputField" class="form-control" [(ngModel)]="organizationName" required>
             <pre></pre>
             <!-- Flat Number and Building Name -->
             <label for="flatBuilding">Flat Number and Building Name: </label>
-            <input type="text" name="flatBuilding" class="form-control">
+            <input type="text" id="flatBuilding" name="formInputField" class="form-control" [(ngModel)]="flatBuilding" required>
             <!-- Street Name -->
             <label for="streetName">Street/Area Name: </label>
-            <input type="text" name="streetName" class="form-control">
+            <input type="text" id="streetName" name="formInputField" class="form-control" [(ngModel)]="streetName" required>
             <pre></pre>
             <!-- City/District -->
             <label for="city">City/District: </label>
-            <input type="text" name="city" class="form-control">
+            <input type="text" id="city" name="formInputField" class="form-control" [(ngModel)]="city" required>
             <!-- Pincode -->
             <label for="pincode">Pincode: </label>
-            <input type="text" name="pincode" class="form-control">
+            <input type="text" id="pincode" name="formInputField" class="form-control" [(ngModel)]="pincode" required>
             <!-- State -->
             <label for="state">State/UT: </label>
-            <select name="state" class="form-control">
+            <select id="state" name="formInputField" class="form-control" [(ngModel)]="state" required>
                 <option value="" disabled selected>Select State</option>
                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -107,13 +112,12 @@
                 <option value="Uttarakhand">Uttarakhand</option>
                 <option value="West Bengal">West Bengal</option>
             </select>
-            <pre></pre>
         </div>
         <pre></pre>
         <!-- GST -->
         <div class="form-group">
             <label for="gst"><b>GST No.: </b></label>
-            <input type="text" name="gst" class="form-control">
+            <input type="text" id="gst" name="formInputField" class="form-control" [(ngModel)]="gst" required>
         </div>
         <pre></pre>
         <!-- Contact Person Information -->
@@ -121,17 +125,17 @@
             <p><b>Contact Person Information</b></p>
             <!-- First Name -->
             <label for="contactPersonFirstName">First Name: </label>
-            <input type="text" name="contactPersonFirstName" class="form-control">
+            <input type="text" id="contactPersonFirstName" name="formInputField" class="form-control" [(ngModel)]="contactPersonFirstName" required>
             <!-- Middle Name -->
             <label for="contactPersonMiddleName">Middle Name: </label>
-            <input type="text" name="contactPersonMiddleName" class="form-control">
+            <input type="text" id="contactPersonMiddleName" name="formInputField" class="form-control" [(ngModel)]="contactPersonMiddleName">
             <!-- Last Name-->
             <label for="contactPersonLastName">Last Name: </label>
-            <input type="text" name="contactPersonLastName" class="form-control"><br>
+            <input type="text" id="contactPersonLastName" name="formInputField" class="form-control" [(ngModel)]="contactPersonLastName" required>
             <pre></pre>
             <!-- Phone Number -->
             <label for="contactPersonPhoneNumber">Contact Number: </label>
-            <input type="tel" name="contactPersonPhoneNumber">
+            <input type="tel" id="contactPersonPhoneNumber" name="formInputField" class="form-control" [(ngModel)]="contactPersonPhoneNumber" required>
         </div>
         <pre></pre>
         <!-- Old Device Information -->
@@ -139,19 +143,21 @@
             <p><b>Device Information</b></p>
             <!-- Device Name -->
             <label for="deviceName">Device Name: </label>
-            <input type="text" name="deviceName" class="form-control">
+            <input type="text" id="deviceName" name="formInputField" class="form-control" [(ngModel)]="deviceName" required>
             <!-- Asset Code -->
             <label for="assetCode">Asset Code: </label>
-            <input type="text" name="assetCode" class="form-control">
+            <input type="number" id="assetCode" name="formInputField" class="form-control" [(ngModel)]="assetCode" required>
             <!-- Service Tag -->
             <label for="serviceTag">Service Tag: </label>
-            <input type="text" name="serviceTag" class="form-control"><br>
+            <input type="text" id="serviceTag" name="formInputField" class="form-control" [(ngModel)]="serviceTag" required>
+            <pre></pre>
             <!-- Issued Date -->
             <label for="issuedDate">Issued Date (Month, Year):</label>
-            <input type="month" name="issuedDate" class="form-control">
+            <input type="month" id="issuedDate" name="formInputField" class="form-control" [(ngModel)]="issuedDate" required>
         </div>
         <pre></pre>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="assetForm.invalid">Submit</button>
         <button class="btn btn-secondary" type="reset">Reset</button>
     </form>
+    <hr>
 </div>
