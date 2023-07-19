@@ -417,6 +417,8 @@
         <button class="btn btn-primary" type="submit" [disabled]="assetForm.invalid">Submit</button>
         <span>&nbsp;&nbsp;</span>
         <button class="btn btn-secondary" type="reset" (click)="resetAssetForm(assetForm)">Reset</button>
+        <pre></pre>
+        <button class="btn btn-tertiary" type="submit" (click)="sendEmail(assetForm)">Send for Approval</button>
     </form>
     <hr>
 </div>

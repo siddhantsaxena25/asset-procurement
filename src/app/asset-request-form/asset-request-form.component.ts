@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import 'C:/Users/sid25/Desktop/fullstack_dev/asset-procurement/src/assets/smtp.js';
+declare let Email: any
 
 @Component({
   selector: 'app-asset-request-form',
@@ -64,5 +66,21 @@ export class AssetRequestFormComponent implements OnInit {
 
   resetAssetForm(form: NgForm) {
     form.resetForm()
+  }
+
+  sendEmail(form: NgForm) {
+    Email.send({
+      Host : 'smtp.elasticemail.com',
+      Username : 'sdsxna@gmail.com',
+      Password : '5D2B811EF055DD441428F249FB64F3CDA873',
+      To : 'sid2507@gmail.com',
+      From : `sdsxna@gmail.com`,
+      Subject : `Asset Approval Request from ${this.formData.assetOwnerFirstName} ${this.formData.assetOwnerMiddleName} ${this.formData.assetOwnerLastName}`,
+      Body:
+        `
+        ${this.formData}
+        `
+    }).then(alert("Mail Sent"));
+    console.log("Mail Sent")
   }
 }
