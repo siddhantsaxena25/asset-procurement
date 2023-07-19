@@ -13,41 +13,56 @@ export class AssetRequestFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  approvedMachine: string | undefined;
-  companyName: string | undefined;
-  location: string | undefined;
-  subLocation: string | undefined;
+  formData = {
+    approvedMachine: "",
+    companyName: "",
+    location: "",
+    subLocation: "",
 
-  assetOwnerFirstName: string | undefined;
-  assetOwnerMiddleName: string | undefined;
-  assetOwnerLastName: string | undefined;
-  assetOwnerEmail: string | undefined;
-  edpNumber: string | undefined;
-  assetOwnerDesignation: string | undefined;
-  costCenter: string | undefined;
-  department: string | undefined;
+    assetOwnerFirstName: "",
+    assetOwnerMiddleName: "",
+    assetOwnerLastName: "",
+    assetOwnerEmail: "",
+    edpNumber: "",
+    assetOwnerDesignation: "",
+    costCenter: "",
+    department: "",
 
-  organizationName: string | undefined;
-  flatBuilding: string | undefined;
-  streetName: string | undefined;
-  city: string | undefined;
-  pincode: string | undefined;
-  state: string | undefined;
+    organizationName: "",
+    flatBuilding: "",
+    streetName: "",
+    city: "",
+    pincode: "",
+    state: "",
 
-  gst: string | undefined;
+    gst: "",
 
-  contactPersonFirstName: string | undefined;
-  contactPersonMiddleName: string | undefined;
-  contactPersonLastName: string | undefined;
-  contactPersonPhoneNumber: string | undefined;
+    contactPersonFirstName: "",
+    contactPersonMiddleName: "",
+    contactPersonLastName: "",
+    contactPersonPhoneNumber: "",
 
-  deviceName: string | undefined;
-  assetCode: string | undefined;
-  serviceTag: string | undefined;
-  issuedDate: string | undefined;
+    deviceName: "",
+    assetCode: "",
+    serviceTag: "",
+    issuedDate: ""
+  }
+
+  isValidEmail(email: string): boolean {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
+  
 
   submit(form: NgForm) {
-    console.log("Form Submitted",form);
-    console.log(this.contactPersonPhoneNumber, this.issuedDate);
+    if (form.valid) {
+      console.log("Form submitted:\n", this.formData)
+      console.log("*****************")
+      console.log(form)
+    }
+  }
+
+  resetAssetForm(form: NgForm) {
+    form.resetForm()
   }
 }

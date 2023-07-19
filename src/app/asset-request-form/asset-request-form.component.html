@@ -1,22 +1,62 @@
 <div class="container">
     <h1>Asset Procurement Approval Form</h1>
     <hr>
-    <form #assetForm="ngForm" (ngSubmit)="submit(assetForm)" novalidate>
+    <form #assetForm="ngForm" (ngSubmit)="submit(assetForm)">
         <!-- Approved Machine -->
         <div class="form-group">
             <label for="approvedMachine"><b>Approved Machine: </b></label>
-            <input type="text" id="approvedMachine" name="formInputField" class="form-control" [(ngModel)]="approvedMachine" required>
+            <input type="text" 
+                id="approvedMachine" 
+                name="approvedMachineInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.approvedMachine"
+                #approvedMachine="ngModel" 
+                required>
+            <div *ngIf="approvedMachine.touched && approvedMachine.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
         </div>
         <pre></pre>
         <!-- Company Name and Location Information -->
         <div class="form-group">
             <label for="companyName"><b>Company Name: </b></label>
-            <input type="text" id="companyName" name="formInputField" class="form-control" [(ngModel)]="companyName" required>
+            <input type="text" 
+                id="companyName" 
+                name="companyNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.companyName" 
+                #companyName="ngModel"
+                required>
+            <div *ngIf="companyName.touched && companyName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <pre></pre>
             <label for="location"><b>Location: </b></label>
-            <input type="text" id="location" name="formInputField" class="form-control" [(ngModel)]="location" required>
+            <input type="text" 
+                id="location" 
+                name="locationInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.location"
+                #location="ngModel" 
+                required>
+            <div *ngIf="location.touched && location.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <label for="subLocation"><b>Sub Location: </b></label>
-            <input type="text" id="subLocation" name="formInputField" class="form-control" [(ngModel)]="subLocation" required>
+            <input type="text" 
+                id="subLocation" 
+                name="subLocationInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.subLocation" 
+                #subLocation="ngModel"
+                required>
+            <div *ngIf="subLocation.touched && subLocation.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
         </div>
         <pre></pre>
         <!-- Owner Information -->
@@ -24,30 +64,109 @@
             <p><b>Asset Owner Information</b></p>
             <!-- First Name -->
             <label for="assetOwnerFirstName">First Name: </label>
-            <input type="text" id="assetOwnerFirstName" name="formInputField" class="form-control" [(ngModel)]="assetOwnerFirstName" required>
+            <input type="text" 
+                id="assetOwnerFirstName" 
+                name="assetOwnerFirstNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.assetOwnerFirstName"
+                #assetOwnerFirstName="ngModel" 
+                required>
+            <div *ngIf="assetOwnerFirstName.touched && assetOwnerFirstName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Middle Name -->
             <label for="assetOwnerMiddleName">Middle Name: </label>
-            <input type="text" id="assetOwnerMiddleName" name="formInputField" class="form-control" [(ngModel)]="assetOwnerMiddleName">
+            <input type="text" 
+                id="assetOwnerMiddleName" 
+                name="assetOwnerMiddleNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.assetOwnerMiddleName">
             <!-- Last Name-->
             <label for="assetOwnerLastName">Last Name: </label>
-            <input type="text" id="assetOwnerLastName" name="formInputField" class="form-control" [(ngModel)]="assetOwnerLastName" required>
+            <input type="text" 
+                id="assetOwnerLastName" 
+                name="assetOwnerLastNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.assetOwnerLastName" 
+                #assetOwnerLastName="ngModel"
+                required>
+            <div *ngIf="assetOwnerLastName.touched && assetOwnerLastName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <pre></pre>
             <!-- Email -->
             <label for="assetOwnerEmail">Email: </label>
-            <input type="email" id="assetOwnerEmail" name="formInputField" class="form-control" [(ngModel)]="assetOwnerEmail" required>
+            <input type="email" 
+                id="assetOwnerEmail" 
+                name="assetOwnerEmailInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.assetOwnerEmail" 
+                #assetOwnerEmail="ngModel"
+                required>
+            <div *ngIf="(assetOwnerEmail.touched && assetOwnerEmail.pristine) || 
+                    (assetOwnerEmail.dirty && (formData.assetOwnerEmail === ''))"
+                class="alert alert-danger">
+                This is a required field
+            </div>
+            <div *ngIf="(assetOwnerEmail.dirty) && (isValidEmail(formData.assetOwnerEmail) === false)"
+                class="alert alert-danger">
+                Email is of invalid format
+            </div>
             <!-- EDP No. -->
             <label for="edpNumber">EDP No.: </label>
-            <input type="text" id="edpNumber" name="formInputField" class="form-control" [(ngModel)]="edpNumber" required>
+            <input type="text" 
+                id="edpNumber" 
+                name="edpNumberInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.edpNumber" 
+                #edpNumber="ngModel"
+                required>
+            <div *ngIf="edpNumber.touched && edpNumber.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Designation -->
             <label for="assetOwnerDesignation">Designation: </label>
-            <input type="text" id="assetOwnerDesignation" name="formInputField" class="form-control" [(ngModel)]="assetOwnerDesignation" required>
+            <input type="text" 
+                id="assetOwnerDesignation" 
+                name="assetOwnerDesignationInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.assetOwnerDesignation"
+                #assetOwnerDesignation="ngModel" 
+                required>
+            <div *ngIf="assetOwnerDesignation.touched && assetOwnerDesignation.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <pre></pre>
             <!-- Cost Center -->
             <label for="costCenter">Cost Center: </label>
-            <input type="text" id="costCenter" name="formInputField" class="form-control" [(ngModel)]="costCenter" required>
+            <input type="text" 
+                id="costCenter" 
+                name="costCenterInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.costCenter" 
+                #costCenter="ngModel"
+                required>
+            <div *ngIf="costCenter.touched && costCenter.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Department -->
             <label for="department">Department: </label>
-            <input type="text" id="department" name="formInputField" class="form-control" [(ngModel)]="department" required>
+            <input type="text" 
+                id="department" 
+                name="departmentInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.department" 
+                #department="ngModel"
+                required>            
+            <div *ngIf="department.touched && department.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
         </div>
         <pre></pre>
         <!-- Delivery Address -->
@@ -55,24 +174,75 @@
             <div><b>Address</b></div>
             <!-- Company/Organization Name -->
             <label for="organizationName">Company/Organization Name: </label>
-            <input type="text" id="organizationName" name="formInputField" class="form-control" [(ngModel)]="organizationName" required>
+            <input type="text" 
+                id="organizationName" 
+                name="organizationNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.organizationName" 
+                #organizationName="ngModel"
+                required>            
+            <div *ngIf="organizationName.touched && organizationName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <pre></pre>
             <!-- Flat Number and Building Name -->
             <label for="flatBuilding">Flat Number and Building Name: </label>
-            <input type="text" id="flatBuilding" name="formInputField" class="form-control" [(ngModel)]="flatBuilding" required>
+            <input type="text" 
+                id="flatBuilding" 
+                name="flatBuildingInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.flatBuilding"
+                #flatBuilding="ngModel"
+                required>            
+            <div *ngIf="flatBuilding.touched && flatBuilding.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Street Name -->
             <label for="streetName">Street/Area Name: </label>
-            <input type="text" id="streetName" name="formInputField" class="form-control" [(ngModel)]="streetName" required>
+            <input type="text" 
+                id="streetName" 
+                name="streetNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.streetName" 
+                #streetName="ngModel"
+                required>            
+            <div *ngIf="streetName.touched && streetName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <pre></pre>
             <!-- City/District -->
             <label for="city">City/District: </label>
-            <input type="text" id="city" name="formInputField" class="form-control" [(ngModel)]="city" required>
+            <input type="text" 
+                id="city" 
+                name="cityInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.city"
+                #city="ngModel"
+                required>            
+            <div *ngIf="city.touched && city.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Pincode -->
             <label for="pincode">Pincode: </label>
-            <input type="text" id="pincode" name="formInputField" class="form-control" [(ngModel)]="pincode" required>
+            <input type="text" 
+                id="pincode" 
+                name="pincodeInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.pincode"
+                #pincode="ngModel" 
+                required>            
+            <div *ngIf="pincode.touched && pincode.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- State -->
             <label for="state">State/UT: </label>
-            <select id="state" name="formInputField" class="form-control" [(ngModel)]="state" required>
+            <select id="state" name="stateSelectField" class="form-control" 
+                [(ngModel)]="formData.state" #state="ngModel" required>
                 <option value="" disabled selected>Select State</option>
                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -111,13 +281,27 @@
                 <option value="Uttar Pradesh">Uttar Pradesh</option>
                 <option value="Uttarakhand">Uttarakhand</option>
                 <option value="West Bengal">West Bengal</option>
-            </select>
+            </select>            
+            <div *ngIf="state.touched && state.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
         </div>
         <pre></pre>
         <!-- GST -->
         <div class="form-group">
             <label for="gst"><b>GST No.: </b></label>
-            <input type="text" id="gst" name="formInputField" class="form-control" [(ngModel)]="gst" required>
+            <input type="text" 
+                id="gst" 
+                name="gstInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.gst"
+                #gst="ngModel"
+                required>            
+            <div *ngIf="gst.touched && gst.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
         </div>
         <pre></pre>
         <!-- Contact Person Information -->
@@ -125,17 +309,51 @@
             <p><b>Contact Person Information</b></p>
             <!-- First Name -->
             <label for="contactPersonFirstName">First Name: </label>
-            <input type="text" id="contactPersonFirstName" name="formInputField" class="form-control" [(ngModel)]="contactPersonFirstName" required>
+            <input type="text" 
+                id="contactPersonFirstName" 
+                name="contactPersonFirstNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.contactPersonFirstName" 
+                #contactPersonFirstName="ngModel"
+                required>            
+            <div *ngIf="contactPersonFirstName.touched && contactPersonFirstName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Middle Name -->
             <label for="contactPersonMiddleName">Middle Name: </label>
-            <input type="text" id="contactPersonMiddleName" name="formInputField" class="form-control" [(ngModel)]="contactPersonMiddleName">
+            <input type="text" 
+                id="contactPersonMiddleName" 
+                name="contactPersonMiddleNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.contactPersonMiddleName">
             <!-- Last Name-->
             <label for="contactPersonLastName">Last Name: </label>
-            <input type="text" id="contactPersonLastName" name="formInputField" class="form-control" [(ngModel)]="contactPersonLastName" required>
+            <input type="text" 
+                id="contactPersonLastName" 
+                name="contactPersonLastNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.contactPersonLastName" 
+                #contactPersonLastName="ngModel"
+                required>            
+            <div *ngIf="contactPersonLastName.touched && contactPersonLastName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <pre></pre>
             <!-- Phone Number -->
             <label for="contactPersonPhoneNumber">Contact Number: </label>
-            <input type="tel" id="contactPersonPhoneNumber" name="formInputField" class="form-control" [(ngModel)]="contactPersonPhoneNumber" required>
+            <input type="tel" 
+                id="contactPersonPhoneNumber" 
+                name="contactPersonPhoneNumberInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.contactPersonPhoneNumber"
+                #contactPersonPhoneNumber="ngModel"
+                required>            
+            <div *ngIf="contactPersonPhoneNumber.touched && contactPersonPhoneNumber.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
         </div>
         <pre></pre>
         <!-- Old Device Information -->
@@ -143,21 +361,62 @@
             <p><b>Device Information</b></p>
             <!-- Device Name -->
             <label for="deviceName">Device Name: </label>
-            <input type="text" id="deviceName" name="formInputField" class="form-control" [(ngModel)]="deviceName" required>
+            <input type="text" 
+                id="deviceName" 
+                name="deviceNameInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.deviceName"
+                #deviceName="ngModel"
+                required>            
+            <div *ngIf="deviceName.touched && deviceName.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Asset Code -->
             <label for="assetCode">Asset Code: </label>
-            <input type="number" id="assetCode" name="formInputField" class="form-control" [(ngModel)]="assetCode" required>
+            <input type="number" 
+                id="assetCode" 
+                name="assetCodeInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.assetCode" 
+                #assetCode="ngModel"
+                required>            
+            <div *ngIf="assetCode.touched && assetCode.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <!-- Service Tag -->
             <label for="serviceTag">Service Tag: </label>
-            <input type="text" id="serviceTag" name="formInputField" class="form-control" [(ngModel)]="serviceTag" required>
+            <input type="text" 
+                id="serviceTag" 
+                name="serviceTagInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.serviceTag"
+                #serviceTag="ngModel"
+                required>            
+            <div *ngIf="serviceTag.touched && serviceTag.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
             <pre></pre>
             <!-- Issued Date -->
             <label for="issuedDate">Issued Date (Month, Year):</label>
-            <input type="month" id="issuedDate" name="formInputField" class="form-control" [(ngModel)]="issuedDate" required>
+            <input type="month" 
+                id="issuedDate" 
+                name="issuedDateInputField" 
+                class="form-control" 
+                [(ngModel)]="formData.issuedDate"
+                #issuedDate="ngModel"
+                required>            
+            <div *ngIf="issuedDate.touched && issuedDate.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
         </div>
         <pre></pre>
         <button class="btn btn-primary" type="submit" [disabled]="assetForm.invalid">Submit</button>
-        <button class="btn btn-secondary" type="reset">Reset</button>
+        <span>&nbsp;&nbsp;</span>
+        <button class="btn btn-secondary" type="reset" (click)="resetAssetForm(assetForm)">Reset</button>
     </form>
     <hr>
 </div>
