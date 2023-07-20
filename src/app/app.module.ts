@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetRequestFormComponent } from './asset-request-form/asset-request-form.component';
 import { FormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ViewRequestsComponent } from './view-requests/view-requests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AssetRequestFormComponent
+    AssetRequestFormComponent,
+    HomePageComponent,
+    ViewRequestsComponent
   ],
   imports: [
     BrowserModule,
