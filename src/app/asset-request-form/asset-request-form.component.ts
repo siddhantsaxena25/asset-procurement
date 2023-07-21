@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 import 'C:/Users/sid25/Desktop/fullstack_dev/asset-procurement/src/assets/smtp.js';
 declare let Email: any
 
@@ -10,12 +13,13 @@ declare let Email: any
 })
 export class AssetRequestFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
   }
 
   formData = {
+    id: "",
     approvedMachine: "",
     companyName: "",
     location: "",
@@ -61,6 +65,13 @@ export class AssetRequestFormComponent implements OnInit {
       console.log("Form submitted:\n", this.formData)
       console.log("*****************")
       console.log(form)
+
+      this.formData.id = this.formData.companyName + this.formData.deviceName
+
+      this.httpClient.post(
+        'https://asset-procurement-default-rtdb.asia-southeast1.firebasedatabase.app/assetApprovals.json',
+        this.formData
+      ).subscribe(response => console.log(response))
     }
   }
 
@@ -83,4 +94,8 @@ export class AssetRequestFormComponent implements OnInit {
     }).then(alert("Mail Sent"));
     console.log("Mail Sent")
   }
+
+  clickButton(path: string) {
+    this.router.navigate([path]);
+} 
 }
