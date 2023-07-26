@@ -1,0 +1,59 @@
+<!-- confirmation-page.component.html -->
+
+<div class="confirmation-container">
+    <h2>Confirmation Details</h2>
+    
+    <!-- Form Details -->
+    <div class="details-section">
+      <h3>Form Details</h3>
+      <p><strong>ID:</strong> {{ formData.id }}</p>
+      <p><strong>Approved Machine:</strong> {{ formData.approvedMachine }}</p>
+      <p><strong>Company Name:</strong> {{ formData.companyName }}</p>
+      <p><strong>Location:</strong> {{ formData.location }}</p>
+      <p><strong>Sublocation:</strong> {{ formData.subLocation }}</p>
+      <p><strong>Asset Owner First Name:</strong> {{ formData.assetOwnerFirstName }}</p>
+      <p><strong>Asset Owner Middle Name:</strong> {{ formData.assetOwnerMiddleName }}</p>
+      <p><strong>Asset Owner Last Name:</strong> {{ formData.assetOwnerLastName }}</p>
+      <p><strong>EDP Number:</strong> {{ formData.edpNumber }}</p>
+      <p><strong>Asset Owner Designation:</strong> {{ formData.assetOwnerDesignation }}</p>
+      <p><strong>Cost Center:</strong> {{ formData.costCenter }}</p>
+      <p><strong>Department:</strong> {{ formData.department }}</p>
+    </div>
+    
+    <!-- Organization Details -->
+    <div class="details-section">
+      <h3>Organization Details</h3>
+      <p><strong>Organization Name:</strong> {{ formData.organizationName }}</p>
+      <p><strong>Flat and Building:</strong> {{ formData.flatBuilding }}</p>
+      <p><strong>Street:</strong> {{ formData.streetName }}</p>
+      <p><strong>City:</strong> {{ formData.city }}</p>
+      <p><strong>Pincode:</strong> {{ formData.pincode }}</p>
+      <p><strong>State:</strong> {{ formData.state }}</p>
+    </div>
+  
+    <!-- Contact Person Details -->
+    <div class="details-section">
+      <h3>Contact Person Details</h3>
+      <p><strong>GST Number:</strong> {{ formData.gst }}</p>
+      <p><strong>Contact Person First Name:</strong> {{ formData.contactPersonFirstName }}</p>
+      <p><strong>Contact Person Middle Name:</strong> {{ formData.contactPersonMiddleName }}</p>
+      <p><strong>Contact Person Last Name:</strong> {{ formData.contactPersonLastName }}</p>
+      <p><strong>Contact Person Phone Number:</strong> {{ formData.contactPersonPhoneNumber }}</p>
+    </div>
+  
+    <!-- Device Details -->
+    <div class="details-section">
+      <h3>Device Details</h3>
+      <p><strong>Device Name:</strong> {{ formData.deviceName }}</p>
+      <p><strong>Asset Code:</strong> {{ formData.assetCode }}</p>
+      <p><strong>Service Tag:</strong> {{ formData.serviceTag }}</p>
+      <p><strong>Issued Date:</strong> {{ formData.issuedDate }}</p>
+    </div>
+  
+    <div class="confirmation-buttons">
+        <button class="btn btn-primary" type="submit">Confirm and send for Approval</button>
+        <button class="btn btn-secondary">Go back to Request Form</button>
+    </div>
+  </div>
+  
+

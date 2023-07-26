@@ -2,7 +2,7 @@
     <button class="link btn btn-tertiary" (click)="clickButton('')">Back to Home Page</button>
     <h1>Asset Procurement Approval Form</h1>
     <hr>
-    <form #assetForm="ngForm" (ngSubmit)="submit(assetForm)">
+    <form #assetForm="ngForm" (ngSubmit)="submit(assetForm, 'confirmRequest')">
         <!-- Approved Machine -->
         <div class="form-group">
             <label for="approvedMachine"><b>Approved Machine: </b></label>
@@ -415,7 +415,7 @@
             </div>
         </div>
         <pre></pre>
-        <button class="btn btn-primary" type="submit" [disabled]="assetForm.invalid">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="assetForm.invalid" (click)="submit(assetForm, 'confirmRequest')">Submit</button>
         <span>&nbsp;&nbsp;</span>
         <button class="btn btn-secondary" type="reset" (click)="resetAssetForm(assetForm)">Reset</button>
         <pre></pre>

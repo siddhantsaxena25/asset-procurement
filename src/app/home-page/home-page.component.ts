@@ -16,5 +16,5 @@ export class HomePageComponent implements OnInit {
 
   clickButton(path: string) {
     this.router.navigate([path]);
-} 
+  } 
 }
