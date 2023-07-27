@@ -10,7 +10,7 @@
                 id="approvedMachine" 
                 name="approvedMachineInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.approvedMachine"
+                [(ngModel)]="approvalRequestData.approvedMachine"
                 #approvedMachine="ngModel" 
                 required>
             <div *ngIf="approvedMachine.touched && approvedMachine.pristine"
@@ -26,7 +26,7 @@
                 id="companyName" 
                 name="companyNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.companyName" 
+                [(ngModel)]="approvalRequestData.companyName" 
                 #companyName="ngModel"
                 required>
             <div *ngIf="companyName.touched && companyName.pristine"
@@ -39,7 +39,7 @@
                 id="location" 
                 name="locationInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.location"
+                [(ngModel)]="approvalRequestData.location"
                 #location="ngModel" 
                 required>
             <div *ngIf="location.touched && location.pristine"
@@ -51,7 +51,7 @@
                 id="subLocation" 
                 name="subLocationInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.subLocation" 
+                [(ngModel)]="approvalRequestData.subLocation" 
                 #subLocation="ngModel"
                 required>
             <div *ngIf="subLocation.touched && subLocation.pristine"
@@ -69,7 +69,7 @@
                 id="assetOwnerFirstName" 
                 name="assetOwnerFirstNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.assetOwnerFirstName"
+                [(ngModel)]="approvalRequestData.assetOwnerFirstName"
                 #assetOwnerFirstName="ngModel" 
                 required>
             <div *ngIf="assetOwnerFirstName.touched && assetOwnerFirstName.pristine"
@@ -82,14 +82,14 @@
                 id="assetOwnerMiddleName" 
                 name="assetOwnerMiddleNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.assetOwnerMiddleName">
+                [(ngModel)]="approvalRequestData.assetOwnerMiddleName">
             <!-- Last Name-->
             <label for="assetOwnerLastName">Last Name: </label>
             <input type="text" 
                 id="assetOwnerLastName" 
                 name="assetOwnerLastNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.assetOwnerLastName" 
+                [(ngModel)]="approvalRequestData.assetOwnerLastName" 
                 #assetOwnerLastName="ngModel"
                 required>
             <div *ngIf="assetOwnerLastName.touched && assetOwnerLastName.pristine"
@@ -103,15 +103,15 @@
                 id="assetOwnerEmail" 
                 name="assetOwnerEmailInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.assetOwnerEmail" 
+                [(ngModel)]="approvalRequestData.assetOwnerEmail" 
                 #assetOwnerEmail="ngModel"
                 required>
             <div *ngIf="(assetOwnerEmail.touched && assetOwnerEmail.pristine) || 
-                    (assetOwnerEmail.dirty && (formData.assetOwnerEmail === ''))"
+                    (assetOwnerEmail.dirty && (approvalRequestData.assetOwnerEmail === ''))"
                 class="alert alert-danger">
                 This is a required field
             </div>
-            <div *ngIf="(assetOwnerEmail.dirty) && (isValidEmail(formData.assetOwnerEmail) === false)"
+            <div *ngIf="(assetOwnerEmail.dirty) && (isValidEmail(approvalRequestData.assetOwnerEmail!) === false)"
                 class="alert alert-danger">
                 Email is of invalid format
             </div>
@@ -121,7 +121,7 @@
                 id="edpNumber" 
                 name="edpNumberInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.edpNumber" 
+                [(ngModel)]="approvalRequestData.edpNumber" 
                 #edpNumber="ngModel"
                 required>
             <div *ngIf="edpNumber.touched && edpNumber.pristine"
@@ -134,7 +134,7 @@
                 id="assetOwnerDesignation" 
                 name="assetOwnerDesignationInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.assetOwnerDesignation"
+                [(ngModel)]="approvalRequestData.assetOwnerDesignation"
                 #assetOwnerDesignation="ngModel" 
                 required>
             <div *ngIf="assetOwnerDesignation.touched && assetOwnerDesignation.pristine"
@@ -148,7 +148,7 @@
                 id="costCenter" 
                 name="costCenterInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.costCenter" 
+                [(ngModel)]="approvalRequestData.costCenter" 
                 #costCenter="ngModel"
                 required>
             <div *ngIf="costCenter.touched && costCenter.pristine"
@@ -161,7 +161,7 @@
                 id="department" 
                 name="departmentInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.department" 
+                [(ngModel)]="approvalRequestData.department" 
                 #department="ngModel"
                 required>            
             <div *ngIf="department.touched && department.pristine"
@@ -179,7 +179,7 @@
                 id="organizationName" 
                 name="organizationNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.organizationName" 
+                [(ngModel)]="approvalRequestData.organizationName" 
                 #organizationName="ngModel"
                 required>            
             <div *ngIf="organizationName.touched && organizationName.pristine"
@@ -193,7 +193,7 @@
                 id="flatBuilding" 
                 name="flatBuildingInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.flatBuilding"
+                [(ngModel)]="approvalRequestData.flatBuilding"
                 #flatBuilding="ngModel"
                 required>            
             <div *ngIf="flatBuilding.touched && flatBuilding.pristine"
@@ -206,7 +206,7 @@
                 id="streetName" 
                 name="streetNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.streetName" 
+                [(ngModel)]="approvalRequestData.streetName" 
                 #streetName="ngModel"
                 required>            
             <div *ngIf="streetName.touched && streetName.pristine"
@@ -220,7 +220,7 @@
                 id="city" 
                 name="cityInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.city"
+                [(ngModel)]="approvalRequestData.city"
                 #city="ngModel"
                 required>            
             <div *ngIf="city.touched && city.pristine"
@@ -233,7 +233,7 @@
                 id="pincode" 
                 name="pincodeInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.pincode"
+                [(ngModel)]="approvalRequestData.pincode"
                 #pincode="ngModel" 
                 required>            
             <div *ngIf="pincode.touched && pincode.pristine"
@@ -243,7 +243,7 @@
             <!-- State -->
             <label for="state">State/UT: </label>
             <select id="state" name="stateSelectField" class="form-control" 
-                [(ngModel)]="formData.state" #state="ngModel" required>
+                [(ngModel)]="approvalRequestData.state" #state="ngModel" required>
                 <option value="" disabled selected>Select State</option>
                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -296,7 +296,7 @@
                 id="gst" 
                 name="gstInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.gst"
+                [(ngModel)]="approvalRequestData.gst"
                 #gst="ngModel"
                 required>            
             <div *ngIf="gst.touched && gst.pristine"
@@ -314,7 +314,7 @@
                 id="contactPersonFirstName" 
                 name="contactPersonFirstNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.contactPersonFirstName" 
+                [(ngModel)]="approvalRequestData.contactPersonFirstName" 
                 #contactPersonFirstName="ngModel"
                 required>            
             <div *ngIf="contactPersonFirstName.touched && contactPersonFirstName.pristine"
@@ -327,14 +327,14 @@
                 id="contactPersonMiddleName" 
                 name="contactPersonMiddleNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.contactPersonMiddleName">
+                [(ngModel)]="approvalRequestData.contactPersonMiddleName">
             <!-- Last Name-->
             <label for="contactPersonLastName">Last Name: </label>
             <input type="text" 
                 id="contactPersonLastName" 
                 name="contactPersonLastNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.contactPersonLastName" 
+                [(ngModel)]="approvalRequestData.contactPersonLastName" 
                 #contactPersonLastName="ngModel"
                 required>            
             <div *ngIf="contactPersonLastName.touched && contactPersonLastName.pristine"
@@ -348,7 +348,7 @@
                 id="contactPersonPhoneNumber" 
                 name="contactPersonPhoneNumberInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.contactPersonPhoneNumber"
+                [(ngModel)]="approvalRequestData.contactPersonPhoneNumber"
                 #contactPersonPhoneNumber="ngModel"
                 required>            
             <div *ngIf="contactPersonPhoneNumber.touched && contactPersonPhoneNumber.pristine"
@@ -366,7 +366,7 @@
                 id="deviceName" 
                 name="deviceNameInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.deviceName"
+                [(ngModel)]="approvalRequestData.deviceName"
                 #deviceName="ngModel"
                 required>            
             <div *ngIf="deviceName.touched && deviceName.pristine"
@@ -379,7 +379,7 @@
                 id="assetCode" 
                 name="assetCodeInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.assetCode" 
+                [(ngModel)]="approvalRequestData.assetCode" 
                 #assetCode="ngModel"
                 required>            
             <div *ngIf="assetCode.touched && assetCode.pristine"
@@ -392,7 +392,7 @@
                 id="serviceTag" 
                 name="serviceTagInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.serviceTag"
+                [(ngModel)]="approvalRequestData.serviceTag"
                 #serviceTag="ngModel"
                 required>            
             <div *ngIf="serviceTag.touched && serviceTag.pristine"
@@ -406,7 +406,7 @@
                 id="issuedDate" 
                 name="issuedDateInputField" 
                 class="form-control" 
-                [(ngModel)]="formData.issuedDate"
+                [(ngModel)]="approvalRequestData.issuedDate"
                 #issuedDate="ngModel"
                 required>            
             <div *ngIf="issuedDate.touched && issuedDate.pristine"

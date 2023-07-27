@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ApprovalFormDataService } from '../service/approval-form-data.service';
 
-import 'C:/Users/sid25/Desktop/fullstack_dev/asset-procurement/src/assets/smtp.js';
-declare let Email: any
+import { ApprovalRequestData } from '../models/approval-request-data.model';
+import { ApprovalRequestDataService } from '../service/approval-request-data.service';
 
 @Component({
   selector: 'app-asset-request-form',
@@ -14,7 +13,11 @@ declare let Email: any
 })
 export class AssetRequestFormComponent implements OnInit {
 
-  constructor(private router: Router, private httpClient: HttpClient, private formDataService: ApprovalFormDataService) { }
+  approvalRequestData: ApprovalRequestData = new ApprovalRequestData
+  submitted = false
+
+  constructor(private router: Router, private httpClient: HttpClient, 
+              private approvalRequestDataService: ApprovalRequestDataService) { }
 
   ngOnInit(): void {
   }
@@ -55,7 +58,7 @@ export class AssetRequestFormComponent implements OnInit {
   //   issuedDate: ""
   // }
 
-  formData = this.formDataService.formData
+  // formData = this.formDataService.formData
 
   isValidEmail(email: string): boolean {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -104,11 +107,6 @@ export class AssetRequestFormComponent implements OnInit {
 
   clickButton(path: string) {
     this.router.navigate([path]);
-  }
+  } 
   
-  generateId(companyName: string, approvedMachine: string): string {
-    let restId = 0
-    let id = companyName+"-"+approvedMachine+"-"+restId.toString()
-    return id
-  }
 }

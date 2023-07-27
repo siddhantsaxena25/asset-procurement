@@ -1,0 +1,30 @@
+export class ApprovalRequestData {
+    id?: string = "";
+    approvedMachine?: string = "";
+    companyName?: string = "";
+    location?: string = "";
+    subLocation?: string = "";
+    assetOwnerFirstName?: string = "";
+    assetOwnerMiddleName?: string = "";
+    assetOwnerLastName?: string = "";
+    assetOwnerEmail?: string = "";
+    edpNumber?: string = "";
+    assetOwnerDesignation?: string = "";
+    costCenter?: string = "";
+    department?: string = "";
+    organizationName?: string = "";
+    flatBuilding?: string = "";
+    streetName?: string = "";
+    city?: string = "";
+    pincode?: number | null;
+    state?: string = "";
+    gst?: string = "";
+    contactPersonFirstName?: string = "";
+    contactPersonMiddleName?: string = "";
+    contactPersonLastName?: string = "";
+    contactPersonPhoneNumber?: number | null;
+    deviceName?: string = "";
+    assetCode?: number | null;
+    serviceTag?: string = "";
+    issuedDate?: string = "";
+}
