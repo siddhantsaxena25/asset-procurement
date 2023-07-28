@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; 
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +13,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ViewRequestsComponent } from './view-requests/view-requests.component';
 import { ConfirmRequestComponent } from './confirm-request/confirm-request.component';
 import { environment } from 'src/environments/environment';
+import { SubmitModalComponent } from './submit-modal/submit-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { environment } from 'src/environments/environment';
     AssetRequestFormComponent,
     HomePageComponent,
     ViewRequestsComponent,
-    ConfirmRequestComponent
+    ConfirmRequestComponent,
+    SubmitModalComponent
   ],
   imports: [
     BrowserModule,
@@ -26,8 +30,12 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    AssetRequestFormComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,48 +6,48 @@
     <!-- Form Details -->
     <div class="details-section">
       <h3>Form Details</h3>
-      <p><strong>ID:</strong> {{ formData.id }}</p>
-      <p><strong>Approved Machine:</strong> {{ formData.approvedMachine }}</p>
-      <p><strong>Company Name:</strong> {{ formData.companyName }}</p>
-      <p><strong>Location:</strong> {{ formData.location }}</p>
-      <p><strong>Sublocation:</strong> {{ formData.subLocation }}</p>
-      <p><strong>Asset Owner First Name:</strong> {{ formData.assetOwnerFirstName }}</p>
-      <p><strong>Asset Owner Middle Name:</strong> {{ formData.assetOwnerMiddleName }}</p>
-      <p><strong>Asset Owner Last Name:</strong> {{ formData.assetOwnerLastName }}</p>
-      <p><strong>EDP Number:</strong> {{ formData.edpNumber }}</p>
-      <p><strong>Asset Owner Designation:</strong> {{ formData.assetOwnerDesignation }}</p>
-      <p><strong>Cost Center:</strong> {{ formData.costCenter }}</p>
-      <p><strong>Department:</strong> {{ formData.department }}</p>
+      <p><strong>ID:</strong> {{ approvalRequestDataToConfirm.id }}</p>
+      <p><strong>Approved Machine:</strong> {{ approvalRequestDataToConfirm.approvedMachine }}</p>
+      <p><strong>Company Name:</strong> {{ approvalRequestDataToConfirm.companyName }}</p>
+      <p><strong>Location:</strong> {{ approvalRequestDataToConfirm.location }}</p>
+      <p><strong>Sublocation:</strong> {{ approvalRequestDataToConfirm.subLocation }}</p>
+      <p><strong>Asset Owner First Name:</strong> {{ approvalRequestDataToConfirm.assetOwnerFirstName }}</p>
+      <p><strong>Asset Owner Middle Name:</strong> {{ approvalRequestDataToConfirm.assetOwnerMiddleName }}</p>
+      <p><strong>Asset Owner Last Name:</strong> {{ approvalRequestDataToConfirm.assetOwnerLastName }}</p>
+      <p><strong>EDP Number:</strong> {{ approvalRequestDataToConfirm.edpNumber }}</p>
+      <p><strong>Asset Owner Designation:</strong> {{ approvalRequestDataToConfirm.assetOwnerDesignation }}</p>
+      <p><strong>Cost Center:</strong> {{ approvalRequestDataToConfirm.costCenter }}</p>
+      <p><strong>Department:</strong> {{ approvalRequestDataToConfirm.department }}</p>
     </div>
     
     <!-- Organization Details -->
     <div class="details-section">
       <h3>Organization Details</h3>
-      <p><strong>Organization Name:</strong> {{ formData.organizationName }}</p>
-      <p><strong>Flat and Building:</strong> {{ formData.flatBuilding }}</p>
-      <p><strong>Street:</strong> {{ formData.streetName }}</p>
-      <p><strong>City:</strong> {{ formData.city }}</p>
-      <p><strong>Pincode:</strong> {{ formData.pincode }}</p>
-      <p><strong>State:</strong> {{ formData.state }}</p>
+      <p><strong>Organization Name:</strong> {{ approvalRequestDataToConfirm.organizationName }}</p>
+      <p><strong>Flat and Building:</strong> {{ approvalRequestDataToConfirm.flatBuilding }}</p>
+      <p><strong>Street:</strong> {{ approvalRequestDataToConfirm.streetName }}</p>
+      <p><strong>City:</strong> {{ approvalRequestDataToConfirm.city }}</p>
+      <p><strong>Pincode:</strong> {{ approvalRequestDataToConfirm.pincode }}</p>
+      <p><strong>State:</strong> {{ approvalRequestDataToConfirm.state }}</p>
     </div>
   
     <!-- Contact Person Details -->
     <div class="details-section">
       <h3>Contact Person Details</h3>
-      <p><strong>GST Number:</strong> {{ formData.gst }}</p>
-      <p><strong>Contact Person First Name:</strong> {{ formData.contactPersonFirstName }}</p>
-      <p><strong>Contact Person Middle Name:</strong> {{ formData.contactPersonMiddleName }}</p>
-      <p><strong>Contact Person Last Name:</strong> {{ formData.contactPersonLastName }}</p>
-      <p><strong>Contact Person Phone Number:</strong> {{ formData.contactPersonPhoneNumber }}</p>
+      <p><strong>GST Number:</strong> {{ approvalRequestDataToConfirm.gst }}</p>
+      <p><strong>Contact Person First Name:</strong> {{ approvalRequestDataToConfirm.contactPersonFirstName }}</p>
+      <p><strong>Contact Person Middle Name:</strong> {{ approvalRequestDataToConfirm.contactPersonMiddleName }}</p>
+      <p><strong>Contact Person Last Name:</strong> {{ approvalRequestDataToConfirm.contactPersonLastName }}</p>
+      <p><strong>Contact Person Phone Number:</strong> {{ approvalRequestDataToConfirm.contactPersonPhoneNumber }}</p>
     </div>
   
     <!-- Device Details -->
     <div class="details-section">
       <h3>Device Details</h3>
-      <p><strong>Device Name:</strong> {{ formData.deviceName }}</p>
-      <p><strong>Asset Code:</strong> {{ formData.assetCode }}</p>
-      <p><strong>Service Tag:</strong> {{ formData.serviceTag }}</p>
-      <p><strong>Issued Date:</strong> {{ formData.issuedDate }}</p>
+      <p><strong>Device Name:</strong> {{ approvalRequestDataToConfirm.deviceName }}</p>
+      <p><strong>Asset Code:</strong> {{ approvalRequestDataToConfirm.assetCode }}</p>
+      <p><strong>Service Tag:</strong> {{ approvalRequestDataToConfirm.serviceTag }}</p>
+      <p><strong>Issued Date:</strong> {{ approvalRequestDataToConfirm.issuedDate }}</p>
     </div>
   
     <div class="confirmation-buttons">
@@ -55,5 +55,7 @@
         <button class="btn btn-secondary" (click)="clickButton('form')">Go back to Request Form</button>
     </div>
   </div>
+
+  <app-submit-modal [title]="modalTitle" [message]="modalMessage" (closeModal)="dismissModal()"></app-submit-modal>
   
 

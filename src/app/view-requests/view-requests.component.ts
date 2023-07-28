@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApprovalDataService } from '../service/approval-data.service';
+import { ApprovalRequestDataService } from '../services/approval-request-data.service';
 import { JsonPipe } from '@angular/common';
 
 @Component({
@@ -8,15 +8,15 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./view-requests.component.css']
 })
 export class ViewRequestsComponent implements OnInit {
-  constructor(private approvalData: ApprovalDataService) { }
+  constructor(private approvalData: ApprovalRequestDataService) { }
 
   ngOnInit(): void {
   }
 
-  approvalRequests = this.approvalData.getApprovalRequests()
+  // approvalRequests = this.approvalData.getApprovalRequests()
 
-  getAssetsAsJson() {
-    return JSON.stringify(this.approvalRequests);
-  }
+  // getAssetsAsJson() {
+  //   return JSON.stringify(this.approvalRequests);
+  // }
 
 }

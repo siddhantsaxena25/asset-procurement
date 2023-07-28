@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ApprovalFormDataService } from '../service/approval-form-data.service';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { ApprovalRequestDataService } from '../services/approval-request-data.service';
+import { ApprovalRequestData } from '../models/approval-request-data.model';
 
 @Component({
   selector: 'app-confirm-request',
@@ -11,20 +12,45 @@ import { Router } from '@angular/router';
 
 export class ConfirmRequestComponent implements OnInit {
 
-  constructor(private approvalFormData: ApprovalFormDataService, private httpClient: HttpClient, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, 
+              private approvalRequestDataService: ApprovalRequestDataService) { }
+  
+  modalTitle?: string;
+  modalMessage?: string;
+  approvalRequestDataToConfirm: ApprovalRequestData = new ApprovalRequestData();
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const dataString = params['data'];
+      if (dataString) {
+        this.approvalRequestDataToConfirm = JSON.parse(dataString);
+      } else {
+        console.log("DATA INVALID")
+      }
+    });
   }
 
-  formData = this.approvalFormData.formData
-
   submit() {
-    this.formData.id = this.generateId(this.formData.companyName, this.formData.approvedMachine)
+    this.approvalRequestDataToConfirm.id = this.generateId(this.approvalRequestDataToConfirm.companyName!, this.approvalRequestDataToConfirm.approvedMachine!)
 
-    this.httpClient.post(
-      'https://asset-procurement-default-rtdb.asia-southeast1.firebasedatabase.app/assetApprovals.json',
-      this.formData
-    ).subscribe(response => console.log(response))
+    this.approvalRequestDataService.create(this.approvalRequestDataToConfirm).then(() => {
+      console.log("new data entered", this.approvalRequestDataToConfirm)
+    })
+
+    this.modalTitle = 'Request is submitted';
+    this.modalMessage = `Request is sent for approval with ID: ${ this.approvalRequestDataToConfirm.id }`;
+
+    const modalElement = document.getElementById('submitModal');
+    if (modalElement) {
+      modalElement.classList.add('show');
+    }
+  }
+
+  dismissModal(): void {
+    const modalElement = document.getElementById('submitModal');
+    if (modalElement) {
+      modalElement.classList.remove('show');
+    }
   }
 
   
