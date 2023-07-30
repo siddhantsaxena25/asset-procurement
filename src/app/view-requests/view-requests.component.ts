@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApprovalRequestDataService } from '../services/approval-request-data.service';
-import { JsonPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-requests',
@@ -8,15 +7,13 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./view-requests.component.css']
 })
 export class ViewRequestsComponent implements OnInit {
-  constructor(private approvalData: ApprovalRequestDataService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  // approvalRequests = this.approvalData.getApprovalRequests()
-
-  // getAssetsAsJson() {
-  //   return JSON.stringify(this.approvalRequests);
-  // }
-
+  clickButton(path: string) {
+    this.router.navigate([path]);
+  }
+  
 }
