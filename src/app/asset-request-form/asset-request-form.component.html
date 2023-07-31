@@ -413,13 +413,30 @@
                 class="alert alert-danger">
                 This is a required field
             </div>
+            <pre></pre>
+            <!-- Expiry Date -->
+            <label for="expiryDate">Expiry Date (Month, Year):</label>
+            <input type="month" 
+                id="expiryDate" 
+                name="expiryDateInputField" 
+                class="form-control" 
+                [(ngModel)]="approvalRequestData.expiryDate"
+                #expiryDate="ngModel"
+                required>            
+            <div *ngIf="expiryDate.touched && expiryDate.pristine"
+                class="alert alert-danger">
+                This is a required field
+            </div>
+            <!-- Countdown Timer -->
+            <div *ngIf="approvalRequestData.expiryDate">
+                Time remaining until expiry date: {{ getTimeRemaining(approvalRequestData.expiryDate) }}
+            </div>
         </div>
         <pre></pre>
         <button class="btn btn-primary" type="button" [disabled]="assetForm.invalid" (click)="submit('confirmRequest')">Submit</button>
         <span>&nbsp;&nbsp;</span>
         <button class="btn btn-secondary" type="reset" (click)="resetAssetForm(assetForm)">Reset</button>
         <pre></pre>
-        <!-- <button class="btn btn-tertiary" type="submit" (click)="sendEmail(assetForm)">Send for Approval</button> -->
         <button class="link btn btn-tertiary" (click)="clickButton('')">Back to Home Page</button>
     </form>
     <hr>

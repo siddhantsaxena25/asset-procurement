@@ -24,6 +24,22 @@ export class AssetRequestFormComponent implements OnInit {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
   }
+
+  getTimeRemaining(expiryDate: string): string {
+    const expiryDateObj = new Date(expiryDate);
+    const currentDate = new Date();
+    const timeDiff = expiryDateObj.getTime() - currentDate.getTime();
+
+    if (timeDiff <= 0) {
+      return 'Expiry date has passed';
+    }
+
+    const daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const monthsRemaining = Math.floor(daysRemaining / 30);
+    const daysLeft = daysRemaining % 30;
+
+    return `${monthsRemaining} months and ${daysLeft} days`;
+  }
   
   submit(path: string) {    
     this.router.navigate([path], {

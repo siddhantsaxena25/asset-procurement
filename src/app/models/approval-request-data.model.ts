@@ -27,4 +27,5 @@ export class ApprovalRequestData {
     assetCode?: number | null;
     serviceTag?: string = "";
     issuedDate?: string = "";
+    expiryDate?: string = "";
 }
