@@ -15,6 +15,8 @@ import { ConfirmRequestComponent } from './confirm-request/confirm-request.compo
 import { environment } from 'src/environments/environment';
 import { SubmitModalComponent } from './submit-modal/submit-modal.component';
 import { ApprovalRequestListComponent } from './approval-request-list/approval-request-list.component';
+import { ApproveRequestComponent } from './approve-request/approve-request.component';
+import { ApproveRequestListComponent } from './approve-request-list/approve-request-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ApprovalRequestListComponent } from './approval-request-list/approval-r
     ViewRequestsComponent,
     ConfirmRequestComponent,
     SubmitModalComponent,
-    ApprovalRequestListComponent
+    ApprovalRequestListComponent,
+    ApproveRequestComponent,
+    ApproveRequestListComponent
   ],
   imports: [
     BrowserModule,

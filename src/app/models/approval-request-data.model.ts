@@ -28,5 +28,6 @@ export class ApprovalRequestData {
     serviceTag?: string = "";
     issuedDate?: string = "";
     expiryDate?: string = "";
-    expiryStatus?: string = ""
+    expiryStatus?: string = "";
+    approveStatus?: string = "Approval Pending"
 }

@@ -25,9 +25,9 @@
                 <b>GST No.:</b> {{ approvalRequest.gst }} <br>
                 <b>Contact Person Name:</b> {{ approvalRequest.contactPersonFirstName }} {{ approvalRequest.contactPersonMiddleName }} {{ approvalRequest.contactPersonLastName }} <br>
                 <b>Device Name:</b> {{ approvalRequest.deviceName }} <b>Asset Code:</b> {{ approvalRequest.assetCode }} <b>Service Tag:</b> {{ approvalRequest.serviceTag }} <br>
-                <b>Issued Date:</b> {{ approvalRequest.issuedDate }} <b>Expiry Date:</b> {{ approvalRequest.expiryDate }} <b>Expiry Status:</b> {{ approvalRequest.expiryStatus }}
+                <b>Issued Date:</b> {{ approvalRequest.issuedDate }} <b>Expiry Date:</b> {{ approvalRequest.expiryDate }} <b>Expiry Status:</b> {{ approvalRequest.expiryStatus }} <br>
+                <b>Approval Status:</b>  {{approvalRequest.approveStatus}}
             </p>
-            <!-- Display other details as needed -->
           </div>
         </ng-container>
       </ul>
