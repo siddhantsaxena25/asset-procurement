@@ -407,6 +407,7 @@
                 name="issuedDateInputField" 
                 class="form-control" 
                 [(ngModel)]="approvalRequestData.issuedDate"
+                (change)="calculateExpiryDate()"
                 #issuedDate="ngModel"
                 required>            
             <div *ngIf="issuedDate.touched && issuedDate.pristine"
@@ -429,7 +430,7 @@
             </div>
             <!-- Countdown Timer -->
             <div *ngIf="approvalRequestData.expiryDate">
-                Time remaining until expiry date: {{ getTimeRemaining(approvalRequestData.expiryDate) }}
+                {{ approvalRequestData.expiryStatus }}
             </div>
         </div>
         <pre></pre>
