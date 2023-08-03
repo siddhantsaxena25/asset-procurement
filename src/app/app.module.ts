@@ -8,15 +8,15 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { AssetRequestFormComponent } from './asset-request-form/asset-request-form.component';
+import { AssetRequestFormComponent } from './asset-request-form-page/asset-request-form/asset-request-form.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { ViewRequestsComponent } from './view-requests/view-requests.component';
-import { ConfirmRequestComponent } from './confirm-request/confirm-request.component';
+import { ViewRequestsComponent } from './view-request-page/view-requests/view-requests.component';
+import { ConfirmRequestComponent } from './confirm-request-page/confirm-request/confirm-request.component';
 import { environment } from 'src/environments/environment';
-import { SubmitModalComponent } from './submit-modal/submit-modal.component';
-import { ApprovalRequestListComponent } from './approval-request-list/approval-request-list.component';
-import { ApproveRequestComponent } from './approve-request/approve-request.component';
-import { ApproveRequestListComponent } from './approve-request-list/approve-request-list.component';
+import { SubmitModalComponent } from './confirm-request-page/submit-modal/submit-modal.component';
+import { ApprovalRequestListComponent } from './view-request-page/approval-request-list/approval-request-list.component';
+import { ApproveRequestComponent } from './approve-request-page/approve-request/approve-request.component';
+import { ApproveRequestListComponent } from './approve-request-page/approve-request-list/approve-request-list.component';
 
 @NgModule({
   declarations: [

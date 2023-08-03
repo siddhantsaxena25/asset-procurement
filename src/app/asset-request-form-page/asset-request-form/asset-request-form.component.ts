@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { ApprovalRequestData } from '../models/approval-request-data.model';
+import { ApprovalRequestData } from '../../shared-data/models/approval-request-data.model';
 
 @Component({
   selector: 'app-asset-request-form',
