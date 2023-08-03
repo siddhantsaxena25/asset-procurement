@@ -47,6 +47,6 @@ export class ApprovalRequestListComponent implements OnInit{
     this.approvalRequestDataService.deleteAll()
       .then(() => this.refreshList())
       .catch(err => console.log(err));
-  } 
+  }
 
 }

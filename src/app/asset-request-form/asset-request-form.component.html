@@ -5,7 +5,7 @@
     <form #assetForm="ngForm">
         <!-- Approved Machine -->
         <div class="form-group">
-            <label for="approvedMachine"><b>Approved Machine: </b></label>
+            <label for="approvedMachine"><b>Approved Machine: (Required Field)</b></label>
             <input type="text" 
                 id="approvedMachine" 
                 name="approvedMachineInputField" 
@@ -21,7 +21,7 @@
         <pre></pre>
         <!-- Company Name and Location Information -->
         <div class="form-group">
-            <label for="companyName"><b>Company Name: </b></label>
+            <label for="companyName"><b>Company Name: (Required Field)</b></label>
             <input type="text" 
                 id="companyName" 
                 name="companyNameInputField" 
@@ -34,7 +34,7 @@
                 This is a required field
             </div>
             <pre></pre>
-            <label for="location"><b>Location: </b></label>
+            <label for="location"><b>Location: (Required Field)</b></label>
             <input type="text" 
                 id="location" 
                 name="locationInputField" 
@@ -46,7 +46,7 @@
                 class="alert alert-danger">
                 This is a required field
             </div>
-            <label for="subLocation"><b>Sub Location: </b></label>
+            <label for="subLocation"><b>Sub Location: (Required Field)</b></label>
             <input type="text" 
                 id="subLocation" 
                 name="subLocationInputField" 
@@ -64,7 +64,7 @@
         <div class="form-group">            
             <p><b>Asset Owner Information</b></p>
             <!-- First Name -->
-            <label for="assetOwnerFirstName">First Name: </label>
+            <label for="assetOwnerFirstName">First Name: (Required Field)</label>
             <input type="text" 
                 id="assetOwnerFirstName" 
                 name="assetOwnerFirstNameInputField" 
@@ -84,7 +84,7 @@
                 class="form-control" 
                 [(ngModel)]="approvalRequestData.assetOwnerMiddleName">
             <!-- Last Name-->
-            <label for="assetOwnerLastName">Last Name: </label>
+            <label for="assetOwnerLastName">Last Name: (Required Field)</label>
             <input type="text" 
                 id="assetOwnerLastName" 
                 name="assetOwnerLastNameInputField" 
@@ -98,7 +98,7 @@
             </div>
             <pre></pre>
             <!-- Email -->
-            <label for="assetOwnerEmail">Email: </label>
+            <label for="assetOwnerEmail">Email: (Required Field)</label>
             <input type="email" 
                 id="assetOwnerEmail" 
                 name="assetOwnerEmailInputField" 
@@ -116,7 +116,7 @@
                 Email is of invalid format
             </div>
             <!-- EDP No. -->
-            <label for="edpNumber">EDP No.: </label>
+            <label for="edpNumber">EDP No.: (Required Field)</label>
             <input type="text" 
                 id="edpNumber" 
                 name="edpNumberInputField" 
@@ -129,7 +129,7 @@
                 This is a required field
             </div>
             <!-- Designation -->
-            <label for="assetOwnerDesignation">Designation: </label>
+            <label for="assetOwnerDesignation">Designation: (Required Field)</label>
             <input type="text" 
                 id="assetOwnerDesignation" 
                 name="assetOwnerDesignationInputField" 
@@ -143,7 +143,7 @@
             </div>
             <pre></pre>
             <!-- Cost Center -->
-            <label for="costCenter">Cost Center: </label>
+            <label for="costCenter">Cost Center: (Required Field)</label>
             <input type="text" 
                 id="costCenter" 
                 name="costCenterInputField" 
@@ -156,7 +156,7 @@
                 This is a required field
             </div>
             <!-- Department -->
-            <label for="department">Department: </label>
+            <label for="department">Department: (Required Field)</label>
             <input type="text" 
                 id="department" 
                 name="departmentInputField" 
@@ -174,7 +174,7 @@
         <div class="form-group">
             <div><b>Address</b></div>
             <!-- Company/Organization Name -->
-            <label for="organizationName">Company/Organization Name: </label>
+            <label for="organizationName">Company/Organization Name: (Required Field)</label>
             <input type="text" 
                 id="organizationName" 
                 name="organizationNameInputField" 
@@ -188,7 +188,7 @@
             </div>
             <pre></pre>
             <!-- Flat Number and Building Name -->
-            <label for="flatBuilding">Flat Number and Building Name: </label>
+            <label for="flatBuilding">Flat Number and Building Name: (Required Field)</label>
             <input type="text" 
                 id="flatBuilding" 
                 name="flatBuildingInputField" 
@@ -201,7 +201,7 @@
                 This is a required field
             </div>
             <!-- Street Name -->
-            <label for="streetName">Street/Area Name: </label>
+            <label for="streetName">Street/Area Name: (Required Field)</label>
             <input type="text" 
                 id="streetName" 
                 name="streetNameInputField" 
@@ -215,7 +215,7 @@
             </div>
             <pre></pre>
             <!-- City/District -->
-            <label for="city">City/District: </label>
+            <label for="city">City/District: (Required Field)</label>
             <input type="text" 
                 id="city" 
                 name="cityInputField" 
@@ -228,7 +228,7 @@
                 This is a required field
             </div>
             <!-- Pincode -->
-            <label for="pincode">Pincode: </label>
+            <label for="pincode">Pincode: (Required Field)</label>
             <input type="text" 
                 id="pincode" 
                 name="pincodeInputField" 
@@ -241,7 +241,7 @@
                 This is a required field
             </div>
             <!-- State -->
-            <label for="state">State/UT: </label>
+            <label for="state">State/UT: (Required Field)</label>
             <select id="state" name="stateSelectField" class="form-control" 
                 [(ngModel)]="approvalRequestData.state" #state="ngModel" required>
                 <option value="" disabled selected>Select State</option>
@@ -291,7 +291,7 @@
         <pre></pre>
         <!-- GST -->
         <div class="form-group">
-            <label for="gst"><b>GST No.: </b></label>
+            <label for="gst"><b>GST No.: (Required Field)</b></label>
             <input type="text" 
                 id="gst" 
                 name="gstInputField" 
@@ -309,7 +309,7 @@
         <div class="form-group">            
             <p><b>Contact Person Information</b></p>
             <!-- First Name -->
-            <label for="contactPersonFirstName">First Name: </label>
+            <label for="contactPersonFirstName">First Name: (Required Field)</label>
             <input type="text" 
                 id="contactPersonFirstName" 
                 name="contactPersonFirstNameInputField" 
@@ -329,7 +329,7 @@
                 class="form-control" 
                 [(ngModel)]="approvalRequestData.contactPersonMiddleName">
             <!-- Last Name-->
-            <label for="contactPersonLastName">Last Name: </label>
+            <label for="contactPersonLastName">Last Name: (Required Field) </label>
             <input type="text" 
                 id="contactPersonLastName" 
                 name="contactPersonLastNameInputField" 
@@ -343,7 +343,7 @@
             </div>
             <pre></pre>
             <!-- Phone Number -->
-            <label for="contactPersonPhoneNumber">Contact Number: </label>
+            <label for="contactPersonPhoneNumber">Contact Number: (Required Field)</label>
             <input type="tel" 
                 id="contactPersonPhoneNumber" 
                 name="contactPersonPhoneNumberInputField" 
@@ -361,7 +361,7 @@
         <div class="form-group">
             <p><b>Device Information</b></p>
             <!-- Device Name -->
-            <label for="deviceName">Device Name: </label>
+            <label for="deviceName">Device Name: (Required Field)</label>
             <input type="text" 
                 id="deviceName" 
                 name="deviceNameInputField" 
@@ -374,7 +374,7 @@
                 This is a required field
             </div>
             <!-- Asset Code -->
-            <label for="assetCode">Asset Code: </label>
+            <label for="assetCode">Asset Code: (Required Field)</label>
             <input type="number" 
                 id="assetCode" 
                 name="assetCodeInputField" 
@@ -387,7 +387,7 @@
                 This is a required field
             </div>
             <!-- Service Tag -->
-            <label for="serviceTag">Service Tag: </label>
+            <label for="serviceTag">Service Tag: (Required Field)</label>
             <input type="text" 
                 id="serviceTag" 
                 name="serviceTagInputField" 
@@ -401,7 +401,7 @@
             </div>
             <pre></pre>
             <!-- Issued Date -->
-            <label for="issuedDate">Issued Date (Month, Year):</label>
+            <label for="issuedDate">Issued Date (Month, Year): (Required Field)</label>
             <input type="month" 
                 id="issuedDate" 
                 name="issuedDateInputField" 
@@ -416,7 +416,7 @@
             </div>
             <pre></pre>
             <!-- Expiry Date -->
-            <label for="expiryDate">Expiry Date (Month, Year):</label>
+            <label for="expiryDate">Expiry Date (Month, Year): (Required Field)</label>
             <input type="month" 
                 id="expiryDate" 
                 name="expiryDateInputField" 

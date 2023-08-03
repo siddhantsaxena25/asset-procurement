@@ -35,6 +35,7 @@ export class ApproveRequestListComponent {
     ).subscribe(data => {
       this.approveRequestList = data
     })
+    console.log(this.approveRequestList)
   }
 
   setActiveRequestToApprove(approvalRequestData: ApprovalRequestData, index: number): void {
@@ -49,12 +50,10 @@ export class ApproveRequestListComponent {
   }
 
   approveRequest(approvalRequest: ApprovalRequestData) {
-    // Perform the approval action (e.g., send a request to the backend)
     approvalRequest.approveStatus = 'Approved';
   }
 
   rejectRequest(approvalRequest: ApprovalRequestData) {
-    // Perform the rejection action (e.g., send a request to the backend)
     approvalRequest.approveStatus = 'Rejected';
   }
 }
