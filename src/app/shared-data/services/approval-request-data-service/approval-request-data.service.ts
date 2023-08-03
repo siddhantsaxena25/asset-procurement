@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { ApprovalRequestData } from '../models/approval-request-data.model';
+import { ApprovalRequestData } from '../../models/approval-request-data.model';
 
 @Injectable({
   providedIn: 'root'

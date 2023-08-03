@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs';
-import { ApprovalRequestData } from '../models/approval-request-data.model';
-import { ApprovalRequestDataService } from '../services/approval-request-data.service';
+import { ApprovalRequestData } from '../../shared-data/models/approval-request-data.model';
+import { ApprovalRequestDataService } from '../../shared-data/services/approval-request-data-service/approval-request-data.service';
 
 @Component({
   selector: 'app-approve-request-list',
