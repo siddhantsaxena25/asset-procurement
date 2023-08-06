@@ -1,0 +1,36 @@
+<div class="list row">
+    <div class="col-md-10">
+      <ul class="list-group">
+        <ng-container *ngFor="let approvalRequest of approvalRequestList; let i = index">
+          <li
+            class="list-group-item"
+            [class.active]="i == currentIndex"
+            (click)="setActiveApprovalRequest(approvalRequest, i)"
+            >
+            {{ approvalRequest.id }}
+          </li>
+          <!-- Details div to display approvalRequest details when the item is selected -->
+          <div class="selected-details" *ngIf="i == currentIndex">
+            <p>
+                <b>Approved Machine:</b> {{ approvalRequest.approvedMachine }} <b>Company Name:</b> {{ approvalRequest.companyName }} <br>
+                <b>Location:</b> {{ approvalRequest.location }} <b>Sub Location:</b> {{ approvalRequest.subLocation }} <br>
+                <b>Asset Owner:</b> {{ approvalRequest.assetOwnerFirstName }} {{ approvalRequest.assetOwnerMiddleName }} {{ approvalRequest.assetOwnerLastName }} <br>
+                <b>Asset Owner Email:</b> {{ approvalRequest.assetOwnerEmail }} <b>EDP No.:</b> {{ approvalRequest.edpNumber }} <br>
+                <b>Designation:</b> {{ approvalRequest.assetOwnerDesignation }} <b>Cost Center:</b> {{ approvalRequest.costCenter }} <br>
+                <b>Department:</b> {{ approvalRequest.department }} <br>
+                <b>Company Name:</b> {{ approvalRequest.organizationName }} <br>
+                <b>Company Address:</b> <br> 
+                {{ approvalRequest.flatBuilding }} {{ approvalRequest.streetName }} <br>
+                {{ approvalRequest.city }} {{ approvalRequest.state }} {{approvalRequest.pincode}} <br>
+                <b>GST No.:</b> {{ approvalRequest.gst }} <br>
+                <b>Contact Person Name:</b> {{ approvalRequest.contactPersonFirstName }} {{ approvalRequest.contactPersonMiddleName }} {{ approvalRequest.contactPersonLastName }} <br>
+                <b>Device Name:</b> {{ approvalRequest.deviceName }} <b>Asset Code:</b> {{ approvalRequest.assetCode }} <b>Service Tag:</b> {{ approvalRequest.serviceTag }} <br>
+                <b>Issued Date:</b> {{ approvalRequest.issuedDate }} <b>Expiry Date:</b> {{ approvalRequest.expiryDate }} <b>Expiry Status:</b> {{ approvalRequest.expiryStatus }} <br>
+                <b>Approval Status:</b>  {{approvalRequest.approveStatus}}
+            </p>
+          </div>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+  

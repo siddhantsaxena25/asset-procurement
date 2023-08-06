@@ -7,13 +7,15 @@ import { ViewRequestsComponent } from './view-request-page/view-requests/view-re
 import { AssetRequestFormComponent } from './asset-request-form-page/asset-request-form/asset-request-form.component';
 import { ConfirmRequestComponent } from './confirm-request-page/confirm-request/confirm-request.component';
 import { ApproveRequestComponent } from './approve-request-page/approve-request/approve-request.component';
+import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-code-creation/asset-code-creation.component';
 
 const routes: Routes = [
   {path: "", component: HomePageComponent},
   {path: "requests", component: ViewRequestsComponent},
   {path: "form", component: AssetRequestFormComponent},
   {path: "confirmRequest", component: ConfirmRequestComponent},
-  {path: "approveRequest", component: ApproveRequestComponent}
+  {path: "approveRequest", component: ApproveRequestComponent},
+  {path: "assetCodeGeneration", component: AssetCodeCreationComponent}
 ];
 
 @NgModule({

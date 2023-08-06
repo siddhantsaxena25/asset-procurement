@@ -17,6 +17,8 @@ import { SubmitModalComponent } from './confirm-request-page/submit-modal/submit
 import { ApprovalRequestListComponent } from './view-request-page/approval-request-list/approval-request-list.component';
 import { ApproveRequestComponent } from './approve-request-page/approve-request/approve-request.component';
 import { ApproveRequestListComponent } from './approve-request-page/approve-request-list/approve-request-list.component';
+import { AssetListComponent } from './asset-code-creation-page/asset-list/asset-list.component';
+import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-code-creation/asset-code-creation.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ApproveRequestListComponent } from './approve-request-page/approve-requ
     SubmitModalComponent,
     ApprovalRequestListComponent,
     ApproveRequestComponent,
-    ApproveRequestListComponent
+    ApproveRequestListComponent,
+    AssetListComponent,
+    AssetCodeCreationComponent
   ],
   imports: [
     BrowserModule,
