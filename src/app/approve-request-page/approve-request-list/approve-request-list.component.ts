@@ -51,6 +51,7 @@ export class ApproveRequestListComponent {
 
   approveRequest(approvalRequest: ApprovalRequestData) {
     approvalRequest.approveStatus = 'Approved';
+    approvalRequest.approvalDate = new Date().toLocaleDateString();
   }
 
   rejectRequest(approvalRequest: ApprovalRequestData) {

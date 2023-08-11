@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./asset-code-creation.component.css']
 })
 export class AssetCodeCreationComponent {
-
+  
 }

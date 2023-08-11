@@ -31,6 +31,8 @@ export class ConfirmRequestComponent implements OnInit {
   }
 
   submit() {
+    this.approvalRequestDataToConfirm.requestDate = new Date().toLocaleDateString()    
+
     this.approvalRequestDataToConfirm.id = this.generateId(this.approvalRequestDataToConfirm.companyName!, this.approvalRequestDataToConfirm.approvedMachine!)
 
     this.approvalRequestDataService.create(this.approvalRequestDataToConfirm).then(() => {

@@ -9,43 +9,70 @@ import { ApprovalRequestDataService } from 'src/app/shared-data/services/approva
   styleUrls: ['./asset-list.component.css']
 })
 export class AssetListComponent {
-  approvalRequestList?: ApprovalRequestData[]
-  currentApprovalRequest?: ApprovalRequestData
+  assetList?: ApprovalRequestData[]
+  currentAsset?: ApprovalRequestData
   currentIndex = -1
+  modalTitle?: string;
+  modalMessage?: string;
   
   constructor(private approvalRequestDataService: ApprovalRequestDataService) {}
+
+  date = '8/8/2023'
   
   ngOnInit(): void {
-    this.retrieveRequests();
+    this.retrieveAssets();
   }
 
   refreshList(): void {
-    this.currentApprovalRequest = undefined;
+    this.currentAsset = undefined;
     this.currentIndex = -1
-    this.retrieveRequests()
+    this.retrieveAssets()
   }
 
-  retrieveRequests(): void {
+  retrieveAssets(): void {
     this.approvalRequestDataService.getAll().snapshotChanges().pipe(
       map(changes =>
-        changes.map(c =>
+        changes
+        // .filter(c => c.payload.val()?.approveStatus === "Approved")
+        .map(c =>
           ({ key: c.payload.key, ...c.payload.val() })
         )
       )
     ).subscribe(data => {
-      this.approvalRequestList = data
+      this.assetList = data
     })
   }
 
-  setActiveApprovalRequest(approvalRequestData: ApprovalRequestData, index: number): void {
-    this.currentApprovalRequest = approvalRequestData;
+  setActiveAsset(asset: ApprovalRequestData, index: number): void {
+    this.currentAsset = asset;
     this.currentIndex = index;
   }
 
-  removeAllApprovalRequests(): void {
+  removeAllAssets(): void {
     this.approvalRequestDataService.deleteAll()
       .then(() => this.refreshList())
       .catch(err => console.log(err));
   }
 
+  generateCode() {
+
+    const min = 100000;
+    const max = 999999;
+    this.modalTitle = 'Generated Asset Code';
+    this.modalMessage = String(Math.floor(Math.random() * (max - min + 1)) + min);
+
+    const modalElement = document.getElementById('codeGenerationModal');
+    if (modalElement) {
+      modalElement.classList.add('show');
+    }
+  }
+
+  dismissModal(): void {
+    const modalElement = document.getElementById('codeGenerationModal');
+    if (modalElement) {
+      modalElement.classList.remove('show');
+    }
+  }
+
+  
 }

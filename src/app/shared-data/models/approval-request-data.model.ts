@@ -29,5 +29,7 @@ export class ApprovalRequestData {
     issuedDate?: string = "";
     expiryDate?: string = "";
     expiryStatus?: string = "";
-    approveStatus?: string = "Approval Pending"
+    approveStatus?: string = "Approval Pending";
+    requestDate?: string = "";
+    approvalDate?: string = "";
 }

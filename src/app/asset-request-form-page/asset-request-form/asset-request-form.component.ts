@@ -74,7 +74,7 @@ export class AssetRequestFormComponent implements OnInit {
     return value.toString().padStart(2, '0');
   }
   
-  submit(path: string) {    
+  submit(path: string) {
     this.router.navigate([path], {
       queryParams: {data: JSON.stringify(this.approvalRequestData)}
     })

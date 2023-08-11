@@ -19,6 +19,7 @@ import { ApproveRequestComponent } from './approve-request-page/approve-request/
 import { ApproveRequestListComponent } from './approve-request-page/approve-request-list/approve-request-list.component';
 import { AssetListComponent } from './asset-code-creation-page/asset-list/asset-list.component';
 import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-code-creation/asset-code-creation.component';
+import { CodeGenerationModalComponent } from './asset-code-creation-page/code-generation-modal/code-generation-modal.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-cod
     ApproveRequestComponent,
     ApproveRequestListComponent,
     AssetListComponent,
-    AssetCodeCreationComponent
+    AssetCodeCreationComponent,
+    CodeGenerationModalComponent
   ],
   imports: [
     BrowserModule,
