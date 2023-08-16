@@ -22,26 +22,26 @@
         <!-- Company Name and Location Information -->
         <div class="form-group">
             <label for="companyName"><b>Company Name: (Required Field)</b></label>
-            <input type="text" 
-                id="companyName" 
-                name="companyNameInputField" 
-                class="form-control" 
-                [(ngModel)]="approvalRequestData.companyName" 
-                #companyName="ngModel"
-                required>
+            <select id="companyName" name="companyNameInputField" class="form-control" 
+                [(ngModel)]="approvalRequestData.companyName" #companyName="ngModel" required>
+                <option value="" disabled selected>Select Company</option>
+                <option value="GAVL">GAVL</option>
+                <option value="GTFL">GTFL</option>
+                <option value="CDPL">CDPL</option>
+                <option value="ACI">ACI</option>
+                <option value="ASTEC">ASTEC</option>
+            </select>
             <div *ngIf="companyName.touched && companyName.pristine"
                 class="alert alert-danger">
                 This is a required field
             </div>
             <pre></pre>
             <label for="location"><b>Location: (Required Field)</b></label>
-            <input type="text" 
-                id="location" 
-                name="locationInputField" 
-                class="form-control" 
-                [(ngModel)]="approvalRequestData.location"
-                #location="ngModel" 
-                required>
+            <select id="location" name="locationInputField" class="form-control" 
+                [(ngModel)]="approvalRequestData.location"#location="ngModel" required>
+                <option value="" disabled selected>Select Location</option>
+                <option *ngFor="let loc of getLocationsForSelectedCompany()" [value]="loc">{{ loc }}</option>
+            </select>
             <div *ngIf="location.touched && location.pristine"
                 class="alert alert-danger">
                 This is a required field

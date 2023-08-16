@@ -15,6 +15,22 @@ export class AssetRequestFormComponent implements OnInit {
   @Input()
   approvalRequestData: ApprovalRequestData = new ApprovalRequestData()
 
+  companyLocations = {
+    'GAVL': ['HO Corp', 'HO AF', 'HO CPB', 'AF_North', 
+              'AF East', 'AF West', 'AF South', 'AF Central',
+              'CPB North', 'CPB East', 'CPB West', 'CPB South',
+              'OPP', 'AQUA', 'GCGPL', 'SEEDS'],
+    'GTFL': ['GTFL HO', 'GTFL Taloja', 'GTFL Nashik', 'GTFL North', 'GTFL South'],
+    'CDPL': ['CDPL Corporate', 'CDPL Vijaywada', 'CDPL Ongole', 
+              'CDPL Chennai', 'CDPL Banglore', 'CDPL Hyderabad',
+              'CDPL Keshavaram', 'CDPL Nagpur', 'CDPL Tirunelveli',
+              'CDPL Vizag'],
+    'ACI': ['ACI'],
+    'ASTEC': ['ASTEC HO', 'ASTEC RABALE', 'Astec Dombivali',
+              'ASTEC Mahad 1', 'ASTEC Mahad 2', 'ASTEC Mahad 3',
+              'ASTEC Mahad 4'],
+  }
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -23,6 +39,11 @@ export class AssetRequestFormComponent implements OnInit {
   isValidEmail(email: string): boolean {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
+  }
+
+  getLocationsForSelectedCompany(): string[] {
+    const selectedCompany = this.approvalRequestData.companyName;
+    return this.companyLocations[selectedCompany as keyof typeof this.companyLocations] || [];
   }
 
   getTimeRemaining(expiryDate: string): void {
