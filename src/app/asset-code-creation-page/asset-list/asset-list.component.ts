@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { map } from 'rxjs';
 import { ApprovalRequestData } from 'src/app/shared-data/models/approval-request-data.model';
 import { ApprovalRequestDataService } from 'src/app/shared-data/services/approval-request-data-service/approval-request-data.service';
@@ -15,7 +16,7 @@ export class AssetListComponent {
   modalTitle?: string;
   modalMessage?: string;
   
-  constructor(private approvalRequestDataService: ApprovalRequestDataService) {}
+  constructor(private approvalRequestDataService: ApprovalRequestDataService, private router: Router) {}
 
   date = '8/8/2023'
   
@@ -60,6 +61,7 @@ export class AssetListComponent {
     const max = 999999;
     this.modalTitle = 'Generated Asset Code';
     this.modalMessage = String(Math.floor(Math.random() * (max - min + 1)) + min);
+    this.currentAsset!.newAssetCode = parseInt(this.modalMessage, 10)
 
     const modalElement = document.getElementById('codeGenerationModal');
     if (modalElement) {
@@ -74,5 +76,9 @@ export class AssetListComponent {
     }
   }
 
-  
+  goToProcurement(path: string) {    
+    this.router.navigate([path], {
+      queryParams: { data: JSON.stringify(this.currentAsset) }
+    });
+  }  
 }

@@ -8,6 +8,7 @@ import { AssetRequestFormComponent } from './asset-request-form-page/asset-reque
 import { ConfirmRequestComponent } from './confirm-request-page/confirm-request/confirm-request.component';
 import { ApproveRequestComponent } from './approve-request-page/approve-request/approve-request.component';
 import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-code-creation/asset-code-creation.component';
+import { AssetProcurementComponent } from './asset-procurement-page/asset-procurement/asset-procurement.component';
 
 const routes: Routes = [
   {path: "", component: HomePageComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: "form", component: AssetRequestFormComponent},
   {path: "confirmRequest", component: ConfirmRequestComponent},
   {path: "approveRequest", component: ApproveRequestComponent},
-  {path: "assetCodeGeneration", component: AssetCodeCreationComponent}
+  {path: "assetCodeGeneration", component: AssetCodeCreationComponent},
+  {path: "assetProcurement", component: AssetProcurementComponent}
 ];
 
 @NgModule({

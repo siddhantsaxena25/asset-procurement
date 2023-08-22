@@ -20,6 +20,7 @@ import { ApproveRequestListComponent } from './approve-request-page/approve-requ
 import { AssetListComponent } from './asset-code-creation-page/asset-list/asset-list.component';
 import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-code-creation/asset-code-creation.component';
 import { CodeGenerationModalComponent } from './asset-code-creation-page/code-generation-modal/code-generation-modal.component';
+import { AssetProcurementComponent } from './asset-procurement-page/asset-procurement/asset-procurement.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CodeGenerationModalComponent } from './asset-code-creation-page/code-ge
     ApproveRequestListComponent,
     AssetListComponent,
     AssetCodeCreationComponent,
-    CodeGenerationModalComponent
+    CodeGenerationModalComponent,
+    AssetProcurementComponent
   ],
   imports: [
     BrowserModule,

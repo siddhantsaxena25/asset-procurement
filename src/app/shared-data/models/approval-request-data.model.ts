@@ -25,6 +25,7 @@ export class ApprovalRequestData {
     contactPersonPhoneNumber?: number | null;
     deviceName?: string = "";
     assetCode?: number | null;
+    newAssetCode?: number | null;
     serviceTag?: string = "";
     issuedDate?: string = "";
     expiryDate?: string = "";
