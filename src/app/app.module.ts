@@ -21,6 +21,7 @@ import { AssetListComponent } from './asset-code-creation-page/asset-list/asset-
 import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-code-creation/asset-code-creation.component';
 import { CodeGenerationModalComponent } from './asset-code-creation-page/code-generation-modal/code-generation-modal.component';
 import { AssetProcurementComponent } from './asset-procurement-page/asset-procurement/asset-procurement.component';
+import { AssetDeliveryComponent } from './asset-delivery-page/asset-delivery/asset-delivery.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AssetProcurementComponent } from './asset-procurement-page/asset-procur
     AssetListComponent,
     AssetCodeCreationComponent,
     CodeGenerationModalComponent,
-    AssetProcurementComponent
+    AssetProcurementComponent,
+    AssetDeliveryComponent
   ],
   imports: [
     BrowserModule,

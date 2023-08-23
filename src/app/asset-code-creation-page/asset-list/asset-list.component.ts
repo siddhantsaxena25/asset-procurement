@@ -57,8 +57,8 @@ export class AssetListComponent {
 
   generateCode() {
 
-    const min = 100000;
-    const max = 999999;
+    const min = 1000000;
+    const max = 9999999;
     this.modalTitle = 'Generated Asset Code';
     this.modalMessage = String(Math.floor(Math.random() * (max - min + 1)) + min);
     this.currentAsset!.newAssetCode = parseInt(this.modalMessage, 10)

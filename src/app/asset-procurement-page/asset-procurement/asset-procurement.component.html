@@ -1,24 +1,38 @@
 <div class="asset-details">
     <h2>Asset Procurement Page</h2>
+    <hr>
     <div>
       <b>Approval Id:</b> {{ procuredAsset.id }} <b>Approved Machine:</b> {{ procuredAsset.approvedMachine }} <br>
       <b>Company Name:</b> {{ procuredAsset.companyName }} <b>Location:</b> {{ procuredAsset.location }} <b>Sub Location:</b> {{ procuredAsset.subLocation }} <br>
+      <hr>
       <b>Asset Owner Information:</b> <br> 
       <b>Asset Owner:</b> {{ procuredAsset.assetOwnerFirstName }} {{ procuredAsset.assetOwnerMiddleName }} {{ procuredAsset.assetOwnerLastName }} <br>
       <b>Asset Owner Email:</b> {{ procuredAsset.assetOwnerEmail }} <b>EDP No.:</b> {{ procuredAsset.edpNumber }} <br>
       <b>Designation:</b> {{ procuredAsset.assetOwnerDesignation }}  <b>Department:</b> {{ procuredAsset.department }} <br>
-      <b>Cost Center:</b> {{ procuredAsset.costCenter }} <br>  
+      <b>Cost Center:</b> {{ procuredAsset.costCenter }} <br> 
+      <hr> 
       <b>Company Name:</b> {{ procuredAsset.organizationName }} <br>
       <b>Company Address:</b> <br> 
-        {{ procuredAsset.flatBuilding }} {{ procuredAsset.streetName }} <br>
-        {{ procuredAsset.city }} {{ procuredAsset.state }} {{procuredAsset.pincode}} <br>
+      <p>{{ procuredAsset.flatBuilding }} {{ procuredAsset.streetName }} <br>
+        {{ procuredAsset.city }} {{ procuredAsset.state }} {{procuredAsset.pincode}} <br></p>
+      <hr>
       <b>GST No.:</b> {{ procuredAsset.gst }} <br>
+      <hr>
       <b>Contact Person Information:</b> <br>
       <b>Contact Person Name:</b> {{ procuredAsset.contactPersonFirstName }} {{ procuredAsset.contactPersonMiddleName }} {{ procuredAsset.contactPersonLastName }} <br>
       <b>Contact Person Phone Number:</b> {{ procuredAsset.contactPersonPhoneNumber }} <br>
+      <hr>
+      <b>New Device Information:</b> <br>
+      <b>Device Name:</b> Lorem Ipsum <b>Asset Code:</b> {{ procuredAsset.newAssetCode }} <b>Service Tag:</b> Lorem Ipsum <br>
+      <b>Issued Date:</b> DD/MM/YYYY <b>Expiry Date:</b> DD/MM/YYYY <br>
+      <hr>
       <b>Old Device Information:</b> <br>
       <b>Device Name:</b> {{ procuredAsset.deviceName }} <b>Asset Code:</b> {{ procuredAsset.assetCode }} <b>Service Tag:</b> {{ procuredAsset.serviceTag }} <br>
       <b>Issued Date:</b> {{ procuredAsset.issuedDate }} <b>Expiry Date:</b> {{ procuredAsset.expiryDate }} <b>Expiry Status:</b> {{ procuredAsset.expiryStatus }}
+      <hr>
+      <button class="btn btn-primary btn-sm ml-2" (click)="goBack('assetCodeGeneration')">Go Back</button>
+      <span>&nbsp;</span>
+      <button class="btn btn-primary btn-sm ml-2" (click)="navigateToDelivery('assetDelivery')">Go to Asset Delivery</button>
     </div>
 </div>
   

@@ -3,12 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApprovalRequestData } from 'src/app/shared-data/models/approval-request-data.model';
 
 @Component({
-  selector: 'app-asset-procurement',
-  templateUrl: './asset-procurement.component.html',
-  styleUrls: ['./asset-procurement.component.css']
+  selector: 'app-asset-delivery',
+  templateUrl: './asset-delivery.component.html',
+  styleUrls: ['./asset-delivery.component.css']
 })
-export class AssetProcurementComponent implements OnInit{  
-  procuredAsset: ApprovalRequestData = new ApprovalRequestData();
+export class AssetDeliveryComponent implements OnInit {  
+  assetToDeliver: ApprovalRequestData = new ApprovalRequestData();
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -16,16 +16,10 @@ export class AssetProcurementComponent implements OnInit{
     this.route.queryParams.subscribe(params => {
       const dataString = params['data'];
       if (dataString) {
-        this.procuredAsset = JSON.parse(dataString);
+        this.assetToDeliver = JSON.parse(dataString);
       } else {
         console.log("DATA INVALID")
       }
-    });
-  }
-
-  navigateToDelivery(path: string) {    
-    this.router.navigate([path], {
-      queryParams: { data: JSON.stringify(this.procuredAsset) }
     });
   }
 
