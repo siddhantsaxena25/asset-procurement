@@ -33,7 +33,8 @@ export class ConfirmRequestComponent implements OnInit {
   submit() {
     this.approvalRequestDataToConfirm.requestDate = new Date().toLocaleDateString()    
 
-    this.approvalRequestDataToConfirm.id = this.generateId(this.approvalRequestDataToConfirm.companyName!, this.approvalRequestDataToConfirm.approvedMachine!)
+    this.approvalRequestDataToConfirm.id = this.generateId(this.approvalRequestDataToConfirm.companyName!, this.approvalRequestDataToConfirm.approvedMachine!, 
+                                                            this.approvalRequestDataToConfirm.assetCode!)
 
     this.approvalRequestDataService.create(this.approvalRequestDataToConfirm).then(() => {
       console.log("new data entered", this.approvalRequestDataToConfirm)
@@ -56,10 +57,8 @@ export class ConfirmRequestComponent implements OnInit {
   }
 
   
-  generateId(companyName: string, approvedMachine: string): string {
-    let restId = 0
-    let id = companyName+"-"+approvedMachine+"-"+restId.toString()
-    restId+=1
+  generateId(companyName: string, approvedMachine: string, assetCode: number): string {
+    let id = companyName+"-"+approvedMachine+"-"+assetCode.toString()
     return id
   }
 

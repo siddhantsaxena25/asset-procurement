@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApprovalRequestData } from 'src/app/shared-data/models/approval-request-data.model';
 
 @Component({
-  selector: 'app-asset-delivery',
-  templateUrl: './asset-delivery.component.html',
-  styleUrls: ['./asset-delivery.component.css']
+  selector: 'app-asset-delivery-confirmation',
+  templateUrl: './asset-delivery-confirmation.component.html',
+  styleUrls: ['./asset-delivery-confirmation.component.css']
 })
-export class AssetDeliveryComponent implements OnInit {  
+export class AssetDeliveryConfirmationComponent implements OnInit {
   assetToDeliver: ApprovalRequestData = new ApprovalRequestData();
 
   constructor(private route: ActivatedRoute, private router: Router) {}
@@ -26,10 +26,4 @@ export class AssetDeliveryComponent implements OnInit {
   goBack(path: string) {    
     this.router.navigate([path]);
   }
-
-  goToDeliveryConfirmation(path: string) {    
-    this.router.navigate([path], {
-      queryParams: { data: JSON.stringify(this.assetToDeliver) }
-    });
-  } 
 }
