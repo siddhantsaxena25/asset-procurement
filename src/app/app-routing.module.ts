@@ -11,6 +11,7 @@ import { AssetCodeCreationComponent } from './asset-code-creation-page/asset-cod
 import { AssetProcurementComponent } from './asset-procurement-page/asset-procurement/asset-procurement.component';
 import { AssetDeliveryComponent } from './asset-delivery-page/asset-delivery/asset-delivery.component';
 import { AssetDeliveryConfirmationComponent } from './asset-delivery-confirmation-page/asset-delivery-confirmation/asset-delivery-confirmation.component';
+import { DeviceAllocationComponent } from './device-allocation-page/device-allocation/device-allocation.component';
 
 const routes: Routes = [
   {path: "", component: HomePageComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: "assetCodeGeneration", component: AssetCodeCreationComponent},
   {path: "assetProcurement", component: AssetProcurementComponent},
   {path: "assetDelivery", component: AssetDeliveryComponent},
-  {path: "assetDeliveryConfirmation", component: AssetDeliveryConfirmationComponent}
+  {path: "assetDeliveryConfirmation", component: AssetDeliveryConfirmationComponent},
+  {path: "deviceAllocation", component: DeviceAllocationComponent}
 ];
 
 @NgModule({

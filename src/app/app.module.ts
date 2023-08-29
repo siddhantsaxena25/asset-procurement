@@ -23,6 +23,7 @@ import { CodeGenerationModalComponent } from './asset-code-creation-page/code-ge
 import { AssetProcurementComponent } from './asset-procurement-page/asset-procurement/asset-procurement.component';
 import { AssetDeliveryComponent } from './asset-delivery-page/asset-delivery/asset-delivery.component';
 import { AssetDeliveryConfirmationComponent } from './asset-delivery-confirmation-page/asset-delivery-confirmation/asset-delivery-confirmation.component';
+import { DeviceAllocationComponent } from './device-allocation-page/device-allocation/device-allocation.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AssetDeliveryConfirmationComponent } from './asset-delivery-confirmatio
     CodeGenerationModalComponent,
     AssetProcurementComponent,
     AssetDeliveryComponent,
-    AssetDeliveryConfirmationComponent
+    AssetDeliveryConfirmationComponent,
+    DeviceAllocationComponent
   ],
   imports: [
     BrowserModule,
