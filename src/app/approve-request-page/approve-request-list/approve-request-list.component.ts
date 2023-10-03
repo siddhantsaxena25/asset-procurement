@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs';
 import { ApprovalRequestData } from '../../shared-data/models/approval-request-data.model';
 import { ApprovalRequestDataService } from '../../shared-data/services/approval-request-data-service/approval-request-data.service';
+import { EmailService } from 'src/app/shared-data/services/email-service/email.service';
 
 @Component({
   selector: 'app-approve-request-list',
@@ -13,7 +14,7 @@ export class ApproveRequestListComponent {
   currentRequestToApprove?: ApprovalRequestData
   currentIndex = -1
   
-  constructor(private approvalRequestDataService: ApprovalRequestDataService) {}
+  constructor(private approvalRequestDataService: ApprovalRequestDataService, private emailService: EmailService) {}
   
   ngOnInit(): void {
     this.retrieveRequests();
@@ -56,5 +57,18 @@ export class ApproveRequestListComponent {
 
   rejectRequest(approvalRequest: ApprovalRequestData) {
     approvalRequest.approveStatus = 'Rejected';
+  }
+
+  async sendITApprovalEmail() {
+    const emailData = {
+      to: ['sdsxna@gmail.com'],
+      message: {
+        subject: 'My Email Subject',
+        text: `${this.currentRequestToApprove?.assetCode}`,
+        html: '<h1>My email HTML</h1>'
+      }
+    };
+
+    await this.emailService.sendITApprovalEmail(emailData);
   }
 }

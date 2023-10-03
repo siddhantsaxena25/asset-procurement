@@ -13,7 +13,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore'
 })
 export class AssetDeliveryConfirmationComponent implements OnInit {
   assetToDeliver: ApprovalRequestData = new ApprovalRequestData();
-  private dbPath = '/deliveryConfirmationEmailsToOwners';
 
   constructor(private route: ActivatedRoute, private router: Router, private db: AngularFireDatabase,
     private firestore: AngularFirestore, private emailService: EmailService) {}
@@ -33,26 +32,7 @@ export class AssetDeliveryConfirmationComponent implements OnInit {
     this.router.navigate([path]);
   }
 
-  // sendConfirmationEmail() {
-  //   const emailData = {
-  //     to: ['sdsxna@gmail.com'],
-  //     message: {
-  //       text: "a mail",
-  //       subject: `Asset Delivery Confirmation for ${this.assetToDeliver.id}`,
-  //       html: `${this.assetToDeliver}>`
-  //     }
-  //   };
-
-  //   this.firestore.collection('mail').add(emailData)
-  //   .then(docRef => {
-  //     console.log('Email document created with ID: ', docRef.id);
-  //   })
-  //   .catch(error => {
-  //     console.error('Error creating email document: ', error);
-  //   });
-  // }
-
-  async sendEmail() {
+  async sendConfirmationEmail() {
     const emailData = {
       to: ['sdsxna@gmail.com'],
       message: {
@@ -62,6 +42,6 @@ export class AssetDeliveryConfirmationComponent implements OnInit {
       }
     };
 
-    await this.emailService.sendEmail(emailData);
+    await this.emailService.sendConfirmationEmail(emailData);
   }
 }
