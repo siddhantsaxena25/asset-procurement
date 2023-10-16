@@ -13,10 +13,11 @@
             <p>
                 <b>Requestor Name:</b> {{ asset.assetOwnerFirstName }} {{ asset.assetOwnerMiddleName }} {{ asset.assetOwnerLastName }} <br>
                 <b>Asset Type:</b> {{ asset.approvedMachine }} <br> 
-                <b>Request Date:</b> {{ asset.requestDate }} <b>Approval Date:</b> {{ date }} <br>
+                <b>Request Date:</b> {{ asset.requestDate }} <br>
+                <b>Approval Date:</b> {{ date }} <br>
                 <b>Approved By:</b> IT Head <br>                
-                <button class="btn btn-primary btn-sm ml-2" (click)="generateCode()">Generate Code</button>
-                <button class="btn btn-secondary btn-sm ml-2" (click)="goToProcurement('assetProcurement')">Go to procurement page</button>
+                <button class="btn btn-primary" (click)="generateCode()">Generate Code</button>
+                <button class="btn btn-secondary" (click)="goToProcurement('assetProcurement')">Go to procurement page</button>
             </p>
           </div>
         </ng-container>

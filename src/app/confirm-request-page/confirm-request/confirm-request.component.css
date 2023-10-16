@@ -1,0 +1,78 @@
+.confirmation-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 2px solid #0c80c8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0101011a;
+}
+
+h1 {
+  text-align: center;
+  font-size: xx-large;
+  color: #0c80c8;
+  margin-bottom: 20px; 
+}
+
+h3 {
+  color: #0c80c8;
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+
+.details-section-1 b,
+.details-section-2 b,
+.details-section-3 b,
+.details-section-4 b,
+.details-section-5 b {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.details-section-1 b::after,
+.details-section-2 b::after,
+.details-section-3 b::after,
+.details-section-4 b::after,
+.details-section-5 b::after {
+  content: ":";
+}
+
+.details-section-1 b, .details-section-2 b, .details-section-3 b, .details-section-4 b, .details-section-5 b {
+  color: #0c80c8;
+  display: inline-block;
+  width: 45%;
+}
+.details-section-1 span, .details-section-2 span, .details-section-3 span, .details-section-4 span, .details-section-5 span {
+  display: inline-block;
+  width: 45%;
+}
+
+.confirmation-buttons {
+  text-align: center; /* Center the buttons */
+}
+
+.confirmation-buttons button {
+  margin-top: 10px;
+  margin-right: 10px; /* Add space between buttons */
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #0c80c8;
+  color: #fff;
+  border: none;
+}
+
+hr {
+  height: 2px;
+  background-color: #0c80c8;
+  border: none;
+}

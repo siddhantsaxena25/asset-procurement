@@ -1,40 +1,44 @@
 <div class="asset-details">
-  <h2>Asset Delivery Information for {{ assetToDeliver.id }}</h2>
-  <hr>
+  <h1>Asset Delivery Information for {{ assetToDeliver.id }}</h1>
+
   <div>
-    <b>Asset Owner Information:</b> <br> 
-    <b>Asset Owner:</b> {{ assetToDeliver.assetOwnerFirstName }} {{ assetToDeliver.assetOwnerMiddleName }} {{ assetToDeliver.assetOwnerLastName }} <br>
-    <b>Asset Owner Email:</b> {{ assetToDeliver.assetOwnerEmail }} <br> 
+    <b>Asset Owner Information:</b> <br>
+    <b>Asset Owner:</b> {{ assetToDeliver.assetOwnerFirstName }} {{ assetToDeliver.assetOwnerMiddleName }} {{
+    assetToDeliver.assetOwnerLastName }} <br>
+    <b>Asset Owner Email:</b> {{ assetToDeliver.assetOwnerEmail }} <br>
     <b>EDP No.:</b> {{ assetToDeliver.edpNumber }} <br>
     <b>Designation:</b> {{ assetToDeliver.assetOwnerDesignation }} <br>
     <b>Department:</b> {{ assetToDeliver.department }} <br>
-    <b>Cost Center:</b> {{ assetToDeliver.costCenter }} <br> 
-    <hr> 
+    <b>Cost Center:</b> {{ assetToDeliver.costCenter }} <br>
+
     <b>Company Name:</b> {{ assetToDeliver.organizationName }} <br>
-    <b>Company Address:</b> <br> 
+    <b>Company Address:</b> <br>
     <p>{{ assetToDeliver.flatBuilding }} {{ assetToDeliver.streetName }} <br>
-      {{ assetToDeliver.city }} {{ assetToDeliver.state }} {{assetToDeliver.pincode}} <br></p>
-    <hr>
+      {{ assetToDeliver.city }} {{ assetToDeliver.state }} {{assetToDeliver.pincode}}</p>
+
     <b>GST No.:</b> {{ assetToDeliver.gst }} <br>
-    <hr>
+
     <b>Approved Machine:</b> {{ assetToDeliver.approvedMachine }} <br>
-    <b>Company Name:</b> {{ assetToDeliver.companyName }} <br> 
-    <b>Location:</b> {{ assetToDeliver.location }} <br> 
+    <b>Company Name:</b> {{ assetToDeliver.companyName }} <br>
+    <b>Location:</b> {{ assetToDeliver.location }} <br>
     <b>Sub Location:</b> {{ assetToDeliver.subLocation }} <br>
-    <hr>
+
     <b>New Device Information:</b> <br>
-    <b>Device Name:</b> Lorem Ipsum <br> 
-    <b>Asset Code:</b> {{ assetToDeliver.newAssetCode }} <br> 
+    <b>Device Name:</b> Lorem Ipsum <br>
+    <b>Asset Code:</b> {{ assetToDeliver.newAssetCode }} <br>
     <b>Service Tag:</b> Lorem Ipsum <br>
     <b>Issued Date:</b> DD/MM/YYYY <b>Expiry Date:</b> DD/MM/YYYY <br>
-    <hr>
+
     <b>Contact Person Information:</b> <br>
-    <b>Contact Person Name:</b> {{ assetToDeliver.contactPersonFirstName }} {{ assetToDeliver.contactPersonMiddleName }} {{ assetToDeliver.contactPersonLastName }} <br>
+    <b>Contact Person Name:</b> {{ assetToDeliver.contactPersonFirstName }} {{ assetToDeliver.contactPersonMiddleName }}
+    {{ assetToDeliver.contactPersonLastName }} <br>
     <b>Contact Person Phone Number:</b> {{ assetToDeliver.contactPersonPhoneNumber }} <br>
-    <hr>
-    <button class="btn btn-primary btn-sm ml-2" (click)="goBack('assetProcurement')">Go Back</button>
-    <span>&nbsp;</span>
-    <button class="btn btn-primary btn-sm ml-2" (click)="goToDeliveryConfirmation('assetDeliveryConfirmation')">Send for Delivery</button>
+
+    <div class="buttons">
+      <button class="btn btn-primary btn-sm ml-2" (click)="goBack('assetProcurement')">Go Back</button>
+      <span>&nbsp;</span>
+      <button class="btn btn-secondary btn-sm ml-2" (click)="goToDeliveryConfirmation('assetDeliveryConfirmation')">Send
+        for Delivery</button>
+    </div>
   </div>
 </div>
-

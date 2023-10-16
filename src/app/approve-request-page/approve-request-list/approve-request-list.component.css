@@ -1,0 +1,80 @@
+/* Style list items */
+.list-group-item {
+    cursor: pointer;
+  }
+  
+  .list-group-item.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Style buttons */
+  .btn {
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  
+  .btn-sm {
+    font-size: 14px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #bb2c3c;
+    border-color: #bb2c3c;
+  }
+  
+  .btn-tertiary {
+    color: #0c80c8;
+  }
+  
+  .btn-tertiary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+  }
+  
+  /* Style selected details container */
+  .selected-details {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Style selected details labels */
+  .selected-details b {
+    font-weight: bold;
+    color: #0c80c8;
+  }
+  
+  /* Add spacing between details */
+  .selected-details > * {
+    margin-bottom: 5px;
+  }
+  
+  .approved {
+    color: darkgreen;
+    font-weight: bold;
+  }
+  .rejected {
+    color: red;
+    font-weight: bold;
+  }
+
+  .buttons {
+    text-align: center;
+  }

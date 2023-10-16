@@ -1,6 +1,7 @@
 .container {
     margin-top: 20px;
     margin-bottom: 20px;
+    color: #0c80c8;
 }
 
 .form-group-1 {
@@ -118,9 +119,14 @@ h1 {
 
 input, select {
     border-width: 2px;
-    border-color: #6d6d6d;
+    border-color: #0c80c8;
 }
 
 label {
     margin-bottom: 2px;
+}
+
+.btn-tertiary {
+    color: #0c80c8;
+    font-weight: bold;
 }

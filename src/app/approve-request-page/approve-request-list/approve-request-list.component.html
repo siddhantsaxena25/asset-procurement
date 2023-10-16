@@ -4,21 +4,11 @@
       <ng-container *ngFor="let approvalRequest of approveRequestList; let i = index">
         <li class="list-group-item" [class.active]="i == currentIndex"
           (click)="setActiveRequestToApprove(approvalRequest, i)">
-          {{ approvalRequest.id }}
-          <!-- Add an approve button -->
-          <button class="btn btn-primary btn-sm ml-2" (click)="approveRequest(approvalRequest)">
-            Approve
-          </button>
-          <!-- Add a reject button -->
-          <button class="btn btn-danger btn-sm ml-2" (click)="rejectRequest(approvalRequest)">
-            Reject
-          </button>
-          <!-- Add a mail button -->
-          <button class="btn btn-tertiary btn-sm ml-2" (click)="sendITApprovalEmail()">
-            Send Approval Mail
-          </button>
+          {{ approvalRequest.id }}          
           <!-- Add a span to display the action taken -->
-          <span class="ml-2" *ngIf="approvalRequest.approveStatus">
+          <span class="ml-2" 
+          [ngClass]="{'approved': approvalRequest.approveStatus === 'Approved', 'rejected': approvalRequest.approveStatus === 'Rejected'}"
+          *ngIf="approvalRequest.approveStatus">
             Request {{ approvalRequest.approveStatus }}
           </span>
         </li>
@@ -38,6 +28,17 @@
           <b>Contact Person Name:</b> {{ approvalRequest.contactPersonFirstName }} {{ approvalRequest.contactPersonMiddleName }} {{ approvalRequest.contactPersonLastName }} <br>
           <b>Device Name:</b> {{ approvalRequest.deviceName }} <b>Asset Code:</b> {{ approvalRequest.assetCode }} <b>Service Tag:</b> {{ approvalRequest.serviceTag }} <br>
           <b>Issued Date:</b> {{ approvalRequest.issuedDate }} <b>Expiry Date:</b> {{ approvalRequest.expiryDate }} <b>Expiry Status:</b> {{ approvalRequest.expiryStatus }}
+          <div class="buttons">
+            <button class="btn btn-primary btn-sm ml-2" (click)="approveRequest(approvalRequest)">
+              Approve
+            </button>
+            <button class="btn btn-danger btn-sm ml-2" (click)="rejectRequest(approvalRequest)">
+              Reject
+            </button>
+            <button class="btn btn-tertiary btn-sm ml-2" (click)="sendITApprovalEmail()">
+              Send Approval Mail
+            </button>
+          </div>
         </div>
       </ng-container>
     </ul>

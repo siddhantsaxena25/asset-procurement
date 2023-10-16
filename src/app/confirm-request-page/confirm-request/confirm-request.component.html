@@ -1,62 +1,60 @@
-<!-- confirmation-page.component.html -->
-
 <div class="confirmation-container">
-    <h2>Confirmation Details</h2>
-    
-    <!-- Form Details -->
-    <div class="details-section">
-      <h3>Form Details</h3>
-      <p><strong>Approved Machine:</strong> {{ approvalRequestDataToConfirm.approvedMachine }}</p>
-      <p><strong>Company Name:</strong> {{ approvalRequestDataToConfirm.companyName }}</p>
-      <p><strong>Location:</strong> {{ approvalRequestDataToConfirm.location }}</p>
-      <p><strong>Sublocation:</strong> {{ approvalRequestDataToConfirm.subLocation }}</p>
-      <p><strong>Asset Owner First Name:</strong> {{ approvalRequestDataToConfirm.assetOwnerFirstName }}</p>
-      <p><strong>Asset Owner Middle Name:</strong> {{ approvalRequestDataToConfirm.assetOwnerMiddleName }}</p>
-      <p><strong>Asset Owner Last Name:</strong> {{ approvalRequestDataToConfirm.assetOwnerLastName }}</p>
-      <p><strong>EDP Number:</strong> {{ approvalRequestDataToConfirm.edpNumber }}</p>
-      <p><strong>Asset Owner Designation:</strong> {{ approvalRequestDataToConfirm.assetOwnerDesignation }}</p>
-      <p><strong>Cost Center:</strong> {{ approvalRequestDataToConfirm.costCenter }}</p>
-      <p><strong>Department:</strong> {{ approvalRequestDataToConfirm.department }}</p>
-    </div>
-    
-    <!-- Organization Details -->
-    <div class="details-section">
-      <h3>Organization Details</h3>
-      <p><strong>Organization Name:</strong> {{ approvalRequestDataToConfirm.organizationName }}</p>
-      <p><strong>Flat and Building:</strong> {{ approvalRequestDataToConfirm.flatBuilding }}</p>
-      <p><strong>Street:</strong> {{ approvalRequestDataToConfirm.streetName }}</p>
-      <p><strong>City:</strong> {{ approvalRequestDataToConfirm.city }}</p>
-      <p><strong>Pincode:</strong> {{ approvalRequestDataToConfirm.pincode }}</p>
-      <p><strong>State:</strong> {{ approvalRequestDataToConfirm.state }}</p>
-    </div>
-  
-    <!-- Contact Person Details -->
-    <div class="details-section">
-      <h3>Contact Person Details</h3>
-      <p><strong>GST Number:</strong> {{ approvalRequestDataToConfirm.gst }}</p>
-      <p><strong>Contact Person First Name:</strong> {{ approvalRequestDataToConfirm.contactPersonFirstName }}</p>
-      <p><strong>Contact Person Middle Name:</strong> {{ approvalRequestDataToConfirm.contactPersonMiddleName }}</p>
-      <p><strong>Contact Person Last Name:</strong> {{ approvalRequestDataToConfirm.contactPersonLastName }}</p>
-      <p><strong>Contact Person Phone Number:</strong> {{ approvalRequestDataToConfirm.contactPersonPhoneNumber }}</p>
-    </div>
-  
-    <!-- Device Details -->
-    <div class="details-section">
-      <h3>Device Details</h3>
-      <p><strong>Device Name:</strong> {{ approvalRequestDataToConfirm.deviceName }}</p>
-      <p><strong>Asset Code:</strong> {{ approvalRequestDataToConfirm.assetCode }}</p>
-      <p><strong>Service Tag:</strong> {{ approvalRequestDataToConfirm.serviceTag }}</p>
-      <p><strong>Issued Date:</strong> {{ approvalRequestDataToConfirm.issuedDate }}</p>
-      <p><strong>Expiry Date:</strong> {{ approvalRequestDataToConfirm.expiryDate }}</p>
-      <p><strong>Expiry Status:</strong> {{ approvalRequestDataToConfirm.expiryStatus }}</p>
-    </div>
-  
-    <div class="confirmation-buttons">
-        <button class="btn btn-primary" type="submit" (click)="submit()">Confirm and send for Approval</button>
-        <button class="btn btn-secondary" (click)="clickButton('form')">Go back to Request Form</button>
-    </div>
+  <h1>Confirmation Details</h1>  
+  <!-- Form Details -->
+  <h3>Form Details</h3>
+  <div class="details-section-1">    
+    <b>Approved Machine</b> {{ approvalRequestDataToConfirm.approvedMachine }} <br>
+    <b>Company Name</b> {{ approvalRequestDataToConfirm.companyName }} <br>
+    <b>Location</b> {{ approvalRequestDataToConfirm.location }} <br>
+    <b>Sublocation</b> {{ approvalRequestDataToConfirm.subLocation }} <br>
+    <b>Asset Owner Name</b> {{ approvalRequestDataToConfirm.assetOwnerFirstName }} {{ approvalRequestDataToConfirm.assetOwnerMiddleName }} {{ approvalRequestDataToConfirm.assetOwnerLastName }} <br>
+    <b>EDP Number</b> {{ approvalRequestDataToConfirm.edpNumber }} <br>
+    <b>Asset Owner Designation</b> {{ approvalRequestDataToConfirm.assetOwnerDesignation }} <br>
+    <b>Cost Center</b> {{ approvalRequestDataToConfirm.costCenter }} <br>
+    <b>Department</b> {{ approvalRequestDataToConfirm.department }} <br>
+  </div>  
+  <hr>
+  <!-- Organization Details -->
+  <h3>Organization Details</h3>
+  <div class="details-section-2">    
+    <b>Organization Name</b> {{ approvalRequestDataToConfirm.organizationName }} <br>
+    <b>Flat and Building</b> {{ approvalRequestDataToConfirm.flatBuilding }} <br>
+    <b>Street</b> {{ approvalRequestDataToConfirm.streetName }} <br>
+    <b>City</b> {{ approvalRequestDataToConfirm.city }} <br>
+    <b>Pincode</b> {{ approvalRequestDataToConfirm.pincode }} <br>
+    <b>State</b> {{ approvalRequestDataToConfirm.state }} <br>
   </div>
+  <hr>
+  <!-- GST -->
+  <div class="details-section-3">
+    <b>GST Number</b> {{ approvalRequestDataToConfirm.gst }}
+  </div>
+  <hr>
+  <!-- Contact Person Details -->
+  <h3>Contact Person Details</h3>
+  <div class="details-section-4">    
+    <b>Contact Person Name</b> {{ approvalRequestDataToConfirm.contactPersonFirstName }} {{ approvalRequestDataToConfirm.contactPersonMiddleName }} {{ approvalRequestDataToConfirm.contactPersonLastName }} <br>
+    <b>Contact Person Phone Number</b> {{ approvalRequestDataToConfirm.contactPersonPhoneNumber }} <br>
+  </div>
+  <hr>
+  <!-- Device Details -->
+  <h3>Device Details</h3>
+  <div class="details-section-5">    
+    <b>Device Name</b> {{ approvalRequestDataToConfirm.deviceName }} <br>
+    <b>Asset Code</b> {{ approvalRequestDataToConfirm.assetCode }} <br>
+    <b>Service Tag</b> {{ approvalRequestDataToConfirm.serviceTag }} <br>
+    <b>Issued Date</b> {{ approvalRequestDataToConfirm.issuedDate }} <br>
+    <b>Expiry Date</b> {{ approvalRequestDataToConfirm.expiryDate }} <br>
+    <b>Expiry Status</b> {{ approvalRequestDataToConfirm.expiryStatus }} <br>
+  </div>
+  <hr>
+  <!-- Confirmation Buttons -->
+  <div class="confirmation-buttons">
+      <button class="btn btn-primary" type="submit" (click)="submit()">Confirm and send for Approval</button>
+      <button class="btn btn-secondary" (click)="clickButton('form')">Go back to Request Form</button>
+  </div>
+</div>
 
-  <app-submit-modal [title]="modalTitle" [message]="modalMessage" (closeModal)="dismissModal()"></app-submit-modal>
+<app-submit-modal [title]="modalTitle" [message]="modalMessage" (closeModal)="dismissModal()"></app-submit-modal>
   
 
